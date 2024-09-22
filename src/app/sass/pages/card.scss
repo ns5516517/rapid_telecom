@@ -1,0 +1,444 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+.card_item {
+    width: calc((100% - 40px) / 3);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 15px 0px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    user-select: none;
+
+    .blog_image {
+        height: 230px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .blog_content {
+        padding: 20px;
+
+        .date {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 22px;
+            color: $label;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 29px;
+            margin-bottom: 20px;
+            color: $label;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 25px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: $label;
+        }
+
+        .link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: 500;
+            color: $primary_text_color;
+
+            span {
+                width: 22px;
+                height: 22px;
+                line-height: 22px;
+                text-align: center;
+                position: relative;
+                left: -10px;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+        }
+    }
+
+    &:hover {
+        .blog_image {
+            img {
+                transform: scale(1.03);
+            }
+        }
+
+        .blog_content {
+            .link {
+                span {
+                    left: 0;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {}
+
+@media (min-width: 1300px) and (max-width: 1399px) {
+    .card_item {
+        .blog_image {
+            height: 220px;
+        }
+
+        .blog_content {
+
+            h4 {
+                line-height: 25px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                line-height: 24px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .card_item {
+        border-radius: 15px;
+
+        .blog_image {
+            height: 233px;
+        }
+
+        .blog_content {
+            padding: 15px;
+
+            .date {
+                font-size: 14px;
+                line-height: 19px;
+                margin-bottom: 6px;
+            }
+
+            h4 {
+                line-height: 23px;
+                margin-bottom: 13px;
+                font-size: 17px;
+            }
+
+            p {
+                line-height: 22px;
+                margin-bottom: 13px;
+            }
+
+            .link {
+                font-size: 15px;
+                line-height: 20px;
+
+                span {}
+
+            }
+        }
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+    .card_item {
+        border-radius: 15px;
+
+        .blog_image {
+            height: 171px;
+        }
+
+        .blog_content {
+            padding: 15px;
+
+            .date {
+                font-size: 14px;
+                line-height: 19px;
+                margin-bottom: 6px;
+            }
+
+            h4 {
+                line-height: 23px;
+                margin-bottom: 13px;
+                font-size: 17px;
+            }
+
+            p {
+                line-height: 22px;
+                margin-bottom: 13px;
+            }
+
+            .link {
+                font-size: 15px;
+                line-height: 20px;
+
+                span {}
+
+            }
+        }
+    }
+}
+
+/* 1200 desktop only */
+@media (min-width: 820px) and (max-width: 1000px) {
+    .card_item {
+        border-radius: 10px;
+
+        .blog_image {
+            height: 190px;
+        }
+
+        .blog_content {
+            padding: 10px;
+
+            .date {
+                font-size: 13px;
+                line-height: 18px;
+                margin-bottom: 5px;
+            }
+
+            h4 {
+                line-height: 20px;
+                margin-bottom: 9px;
+                font-size: 15px;
+            }
+
+            p {
+                line-height: 20px;
+                margin-bottom: 9px;
+                font-size: 13px;
+            }
+
+            .link {
+                font-size: 14px;
+                line-height: 18px;
+
+                span {
+                    width: 18px;
+                    height: 18px;
+                    line-height: 18px;
+                }
+
+            }
+        }
+    }
+} //// use it when u need it
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+    .card_item {
+        border-radius: 10px;
+        width: calc((100% - 15px) / 2);
+
+        .blog_image {
+            height: 227px;
+        }
+
+        .blog_content {
+            padding: 10px;
+
+            .date {
+                font-size: 13px;
+                line-height: 18px;
+                margin-bottom: 5px;
+            }
+
+            h4 {
+                line-height: 20px;
+                margin-bottom: 9px;
+                font-size: 15px;
+            }
+
+            p {
+                line-height: 20px;
+                margin-bottom: 9px;
+                font-size: 13px;
+            }
+
+            .link {
+                font-size: 14px;
+                line-height: 18px;
+
+                span {
+                    width: 18px;
+                    height: 18px;
+                    line-height: 18px;
+                }
+
+            }
+        }
+    }
+}
+
+/* Android portrait screen */
+// @media (min-width: 375px) and (max-width: 667px) {
+//     .card_item {
+//         border-radius: 10px;
+//         width: 100%;
+
+//         .blog_image {
+//             height: 210px;
+//         }
+
+//         .blog_content {
+//             padding: 10px;
+
+//             .date {
+//                 font-size: 12px;
+//                 line-height: 16px;
+//                 margin-bottom: 5px;
+
+//             }
+
+//             h4 {
+//                 line-height: 18px;
+//                 margin-bottom: 7px;
+//                 font-size: 14px;
+//             }
+
+//             p {
+//                 line-height: 19px;
+//                 margin-bottom: 8px;
+//                 font-size: 13px;
+//             }
+
+//             .link {
+//                 font-size: 13px;
+//                 line-height: 16px;
+
+//                 span {
+//                     width: 16px;
+//                     height: 16px;
+//                     line-height: 16px;
+//                 }
+
+//             }
+//         }
+//     }
+// }
+
+//// also this one
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+    
+    .card_item {
+        border-radius: 10px;
+        width: 100%;
+
+        .blog_image {
+            height: 210px;
+        }
+
+        .blog_content {
+            padding: 10px;
+
+            .date {
+                font-size: 12px;
+                line-height: 16px;
+                margin-bottom: 5px;
+
+            }
+
+            h4 {
+                line-height: 18px;
+                margin-bottom: 7px;
+                font-size: 14px;
+            }
+
+            p {
+                line-height: 19px;
+                margin-bottom: 8px;
+                font-size: 13px;
+            }
+
+            .link {
+                font-size: 13px;
+                line-height: 16px;
+
+                span {
+                    width: 16px;
+                    height: 16px;
+                    line-height: 16px;
+                }
+
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+    .card_item {
+        border-radius: 8px;
+        width: 100%;
+
+        .blog_image {
+            height: 160px;
+        }
+
+        .blog_content {
+            padding: 10px;
+
+            .date {
+                font-size: 12px;
+                line-height: 16px;
+                margin-bottom: 5px;
+
+            }
+
+            h4 {
+                line-height: 18px;
+                margin-bottom: 7px;
+                font-size: 14px;
+            }
+
+            p {
+                line-height: 19px;
+                margin-bottom: 8px;
+                font-size: 13px;
+            }
+
+            .link {
+                font-size: 13px;
+                line-height: 16px;
+
+                span {
+                    width: 16px;
+                    height: 16px;
+                    line-height: 16px;
+                }
+
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {}

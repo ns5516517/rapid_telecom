@@ -1,0 +1,465 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+.otp {
+    padding: 90px 0;
+
+    .parent_otp {
+        padding: 70px 50px;
+        width: 830px;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0px 10px $shadow_color;
+        overflow: hidden;
+
+        .title {
+            margin-bottom: 60px;
+            text-align: center;
+
+            h3 {
+                font-family: var(--font-lexend);
+                font-size: 56px;
+                font-weight: 600;
+                line-height: 60px;
+                color: $primary_text_color;
+                margin-bottom: 23px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 400;
+                color: $secondary_text_color;
+            }
+        }
+
+
+        .otp_input_area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+
+            .form_group {
+                width: 58px;
+                height: 58px;
+
+                .form-control {
+                    border-radius: 5px;
+                    border: 1px solid $otp_border;
+                    background-color: $input_bg_color;
+                    font-weight: 400;
+                    font-size: 28px;
+                    line-height: 20px;
+                    outline: none;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+
+                    &:focus {
+                        box-shadow: none;
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .forgot_pass {
+            text-align: right;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+            color: $secondary_text_color;
+            margin-bottom: 50px;
+            margin-right: 25px;
+            cursor: pointer;
+        }
+
+        .otp_btn {
+            width: 125px;
+            max-width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0 auto;
+            color: $white;
+            display: block;
+            border: 1px solid transparent;
+            padding: 15px 25px;
+            border-radius: 15px;
+            background-color: $primary_color;
+        }
+
+    }
+}
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {}
+
+@media (min-width: 1300px) and (max-width: 1399px) {
+    .otp {
+        padding: 70px 0;
+
+        .parent_otp {
+            padding: 45px 25px;
+            border-radius: 17px;
+
+            .title {
+                margin-bottom: 50px;
+
+                h3 {
+                    font-size: 50px;
+                    line-height: 56px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .otp_input_area {
+                .form_group {
+                    width: 52px;
+                    height: 52px;
+
+                    .form-control {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .forgot_pass {
+                margin-bottom: 40px;
+            }
+
+            .otp_btn {
+                padding: 13px 20px;
+                border-radius: 13px;
+                min-width: 120px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .otp {
+        padding: 60px 0;
+
+        .parent_otp {
+            padding: 40px 25px;
+            border-radius: 15px;
+
+            .title {
+                margin-bottom: 40px;
+
+                h3 {
+                    font-size: 43px;
+                    line-height: 50px;
+                    margin-bottom: 16px;
+                }
+            }
+
+            h3 {
+                font-size: 30px;
+                margin-bottom: 35px;
+
+            }
+
+            .otp_input_area {
+                .form_group {
+                    width: 48px;
+                    height: 48px;
+
+                    .form-control {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .forgot_pass {
+                margin-bottom: 35px;
+            }
+
+            .otp_btn {
+                padding: 13px 13px;
+                border-radius: 8px;
+                min-width: 100px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+    .otp {
+        padding: 50px 0;
+
+        .parent_otp {
+            padding: 30px 21px;
+            border-radius: 12px;
+            width: 600px;
+
+            .title {
+                margin-bottom: 30px;
+
+                h3 {
+                    font-size: 34px;
+                    line-height: 43px;
+                    margin-bottom: 14px;
+                }
+            }
+
+            h3 {
+                font-size: 27px;
+                margin-bottom: 30px;
+                line-height: 35px;
+
+            }
+
+            .otp_input_area {
+                gap: 20px;
+                margin-bottom: 30px;
+
+                .form_group {
+                    width: 44px;
+                    height: 44px;
+
+                    .form-label {}
+
+                    .form-control {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .forgot_pass {
+                margin-bottom: 30px;
+                font-size: 15px;
+            }
+
+            .otp_btn {
+                padding: 10px 13px;
+                border-radius: 6px;
+                min-width: 100px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+/* 1200 desktop only */
+// @media (min-width: 820px) and (max-width: 1000px) {} //// use it when u need it
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+    .otp {
+        padding: 40px 0;
+
+        .parent_otp {
+            padding: 20px 20px;
+            border-radius: 9px;
+
+            .title {
+                margin-bottom: 20px;
+
+                h3 {
+                    font-size: 30px;
+                    line-height: 40px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+            }
+
+            h3 {
+                font-size: 22px;
+                margin-bottom: 20px;
+                line-height: 29px;
+            }
+
+            .otp_input_area {
+                gap: 20px;
+                margin-bottom: 20px;
+
+                .form_group {
+                    width: 42px;
+                    height: 42px;
+
+                    .form-control {
+                        padding: 5px;
+                        border-radius: 6px;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .forgot_pass {
+                margin-bottom: 20px;
+                margin-right: 12px;
+                font-size: 14px;
+            }
+
+            .otp_btn {
+                font-size: 13px;
+                padding: 10px 10px;
+                border-radius: 5px;
+                min-width: 100px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+/* Android portrait screen */
+@media (min-width: 375px) and (max-width: 667px) {}
+
+//// also this one
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+    .otp {
+        padding: 30px 0;
+
+        .parent_otp {
+            padding: 15px 20px;
+            border-radius: 9px;
+
+            .title {
+                margin-bottom: 20px;
+
+                h3 {
+                    font-size: 23px;
+                    line-height: 30px;
+                    margin-bottom: 7px;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+            }
+
+            h3 {
+                font-size: 18px;
+                margin-bottom: 20px;
+                line-height: 29px;
+
+            }
+
+            .otp_input_area {
+                gap: 15px;
+                margin-bottom: 20px;
+
+                .form_group {
+                    width: 35px;
+                    height: 35px;
+
+                    .form-control {
+                        padding: 5px;
+                        border-radius: 5px;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .forgot_pass {
+                margin-bottom: 20px;
+                margin-right: 0;
+                font-size: 14px;
+            }
+
+            .otp_btn {
+                font-size: 13px;
+                padding: 10px 10px;
+                border-radius: 5px;
+                min-width: 100px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+    .otp {
+        padding: 25px 0;
+
+        .parent_otp {
+            padding: 15px 20px;
+            border-radius: 9px;
+
+            .title {
+                margin-bottom: 15px;
+
+                h3 {
+                    font-size: 19px;
+                    line-height: 24px;
+                    margin-bottom: 7px;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+            }
+
+            h3 {
+                font-size: 15px;
+                margin-bottom: 15px;
+                line-height: 26px;
+
+            }
+
+            .otp_input_area {
+                gap: 10px;
+                margin-bottom: 15px;
+
+                .form_group {
+                    width: 30px;
+                    height: 30px;
+
+                    .form-control {
+                        padding: 5px;
+                        border-radius: 5px;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .forgot_pass {
+                margin-bottom: 15px;
+                font-size: 13px;
+                margin-right: 0;
+            }
+
+            .otp_btn {
+                font-size: 12px;
+                padding: 7px 11px;
+                border-radius: 5px;
+                width: 96px;
+                margin: 0px auto;
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {}

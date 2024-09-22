@@ -1,0 +1,241 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+.contact_area {
+    .parent_contact_area {
+        @include clearfix();
+        display: flex;
+        .left {
+            background-color: $secondary_color;
+            width: 512px;
+            max-width: 100%;
+            padding: 60px 40px 40px 40px;
+            position: relative;
+            float: left;
+            z-index: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            &::after{
+                content: '';
+                position: absolute;
+                background-image: url('../../images/contact.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 781px;
+                z-index: -1;
+                bottom: -355px;
+                right: -103px;
+                opacity: 0.5;
+            }
+
+            .upper_area {
+                .heading {
+                    font-size: 42px;
+                    margin-bottom: 20px;
+                    font-weight: 700;
+                    line-height: 50px;
+                    color: $white;
+
+                }
+
+                .desc {
+                    font-size: 15px;
+                    line-height: 24px;
+                    margin-bottom: 20px;
+                    color: $white;
+                    font-weight: 500;
+                }
+
+                .address {
+                    margin-bottom: 40px;
+                    li {
+                        display: flex;
+                        gap: 15px;
+                        margin-bottom: 25px;
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        span {
+                            flex-shrink: 0;
+                            display: inline-block;
+                            width: 20px;
+                            font-size: 18px;
+                            color: $white;
+                        }
+
+                        a {
+                            display: inline-block;
+                            font-size: 16px;
+                            color: $white;
+                            font-weight: 300;
+                            line-height: 23px;
+                        }
+                    }
+                }
+                
+                .social {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    margin-bottom: 40px;
+                    li {
+                        a {
+                            display: inline-block;
+                            font-size: 20px;
+                            text-align: center;
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            .lower_area {
+                .contact_time {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 15px;
+                    border-radius: 15px;
+                    background-color: $contact_bg_bottom;
+                    backdrop-filter: blur(50px);
+                    p {
+                        flex-shrink: 0;
+                        flex-grow: 1;
+                        flex-basis: 50%;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: $white;
+                        font-weight: 400;
+                        &.right_p{
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: calc(100% - 512px);
+            float: right;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            max-width: 100%;
+            padding: 60px 40px 40px 40px;
+            background-color: $white;
+            box-shadow:  4px 4px 20px $shadow_color;
+            .form{
+                .form_field{
+                    margin-bottom: 20px;
+                    .form-label{
+                        margin-bottom: 15px;
+                        font-size: 16px;
+                        line-height: 22px;
+                        font-weight: 500;
+                        color: $label;
+
+                    }
+                    .form-control{
+                        padding: 13px 23px;
+                        box-shadow: none;
+                        outline: none;
+                        border: none;
+                        border-radius: 15px;
+                        background-color: $input_bg_color;
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: $label;
+                        .select__control{
+                            border: none;
+                            background-color: transparent;
+                            min-height: unset;
+                            box-shadow: none;
+                            &.select__control--menu-is-open{
+                                .select__indicators{
+                                    .select__indicator{
+                                        svg{
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+                                }
+                            }
+                            .select__value-container{
+                                padding: 0;
+                                .select__input-container{
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
+                            .select__single-value{
+                                margin: 0;
+                            }
+                            .select__indicators{
+                                .select__indicator-separator{
+                                    margin: 0;
+                                }
+                                .select__indicator{
+                                    padding: 0;
+                                    padding-left: 8px;
+                                    svg{
+                                        transition: all 0.3s ease;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {}
+
+@media (min-width: 1300px) and (max-width: 1399px) {}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* 1200 desktop only */
+// @media (min-width: 820px) and (max-width: 1000px) {} //// use it when u need it
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {}
+
+/* Android portrait screen */
+@media (min-width: 375px) and (max-width: 667px) {}
+
+//// also this one
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {}
+
+/* Smaller phones */
+@media (max-width: 360px) {}
+
+/* Smaller phones */
+@media (max-width: 320px) {}

@@ -1,0 +1,1505 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+
+.sign_up {
+    padding: 90px 0;
+
+    .parent_sign_up {
+        @include clearfix();
+        display: flex;
+
+        .left {
+            width: 560px;
+            float: left;
+            background-color: $sign_up_left;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            max-width: 100%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url('../../images/contact.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 200%;
+                height: 100%;
+                inset: 0;
+                top: -100px;
+                left: -400px;
+                z-index: -2;
+                opacity: 0.5;
+            }
+
+            .inner_left {
+                padding: 70px 40px 0 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+                .title {
+                    margin-bottom: 60px;
+                    text-align: left;
+
+                    h3 {
+                        font-family: var(--font-lexend);
+                        font-size: 56px;
+                        font-weight: 600;
+                        line-height: 60px;
+                        color: $white;
+                        margin-bottom: 23px;
+                    }
+
+                    p {
+                        width: 500px;
+                        max-width: 100%;
+                        margin: 0 auto;
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 400;
+                        color: $white;
+                    }
+                }
+
+                .girl_image {
+                    height: 836.34px;
+                    overflow: hidden;
+
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .back_image {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                z-index: -1;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .right {
+            float: right;
+            width: calc(100% - 560px);
+            max-width: 100%;
+            margin: 0 auto;
+
+            .inner_right {
+                width: 80%;
+                margin: 0 auto 0 90px;
+
+                .upper_area {
+                    margin-bottom: 60px;
+
+                    .bar {
+                        background-color: $bar_bg_color;
+                        height: 6px;
+                        position: relative;
+
+                        .bar_initial {
+                            height: 6px;
+                            background-color: $bar_secondary_color;
+                            width: 0;
+                            transition: all 0.3s ease;
+
+                            &.bar_fifty {
+                                width: 50%;
+                            }
+
+                            &.bar_full {
+                                width: 100%;
+                            }
+                        }
+
+                        .bar_circle {
+                            position: absolute;
+                            display: flex;
+                            justify-content: space-between;
+                            left: 0;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+
+                            .circle {
+                                background-color: $bar_bg_color;
+                                width: 25px;
+                                height: 25px;
+                                border-radius: 50%;
+                                transition: all 0.3s ease;
+
+                                &.circle_0 {
+                                    background-color: $bar_secondary_color;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .lower_area {
+
+                    h3 {
+                        margin-bottom: 50px;
+                        font-family: var(--font-lexend);
+                        font-size: 36px;
+                        font-weight: 600;
+                        line-height: 40px;
+                        color: $text_color;
+                    }
+
+                    .form_field {
+                        margin-bottom: 35px;
+
+                        p {
+                            font-family: var(--font-lexend);
+                            font-size: 30px;
+                            font-weight: 500;
+                            line-height: 39px;
+                            color: $text_color;
+                            margin-bottom: 20px;
+
+                        }
+
+                        .name {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 31px;
+                            margin-bottom: 35px;
+
+                            .form_group {
+                                // flex-basis: 379px;
+                                flex-basis: 48%;
+                                flex-shrink: 0;
+                                margin-bottom: 0;
+
+                                .form-label {
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    margin-bottom: 15px;
+                                    color: $label;
+                                }
+
+                                .input_field {
+                                    position: relative;
+
+                                    .form-control {
+                                        border-radius: 15px;
+                                        border: none;
+                                        background-color: $input_bg_color;
+                                        padding: 12px 30px;
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        color: $label;
+                                    }
+
+                                    .icon {
+                                        position: absolute;
+                                        right: 10px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+
+                                .dropdown {
+                                    p {
+                                        margin-bottom: 15px;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        font-weight: 500;
+                                        color: $label;
+                                    }
+
+                                    .dropdown-toggle {
+                                        border-radius: 15px;
+                                        border: none;
+                                        background-color: #F2F2F2;
+                                        padding: 12px 30px;
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        color: #111111;
+                                        width: 100%;
+                                        text-align: left;
+                                        display: flex;
+
+                                        &::after {
+                                            border: none;
+                                            content: '\f078';
+                                            font-family: 'Font Awesome 5 Free';
+                                            font-weight: 900;
+                                            margin-left: auto;
+                                            transition: all 0.3s ease;
+                                        }
+
+                                        &.show {
+                                            &::after {
+                                                transform: rotate(180deg);
+                                            }
+                                        }
+
+                                        &:focus {
+                                            box-shadow: none;
+                                        }
+                                    }
+
+                                    .dropdown-menu {
+                                        border: none;
+                                        display: block;
+                                        transition: all 0.3s ease;
+                                        height: 0;
+                                        opacity: 0;
+                                        z-index: -999;
+                                        padding: 0;
+
+                                        &.show {
+                                            height: fit-content;
+                                            opacity: 1;
+                                            z-index: 999999;
+                                            padding: 5px 0;
+                                        }
+
+                                        .dropdown-item {
+                                            font-size: 15px;
+                                            padding: 13px 13px;
+                                            border-radius: 8px;
+                                            background-color: $input_bg_color;
+                                            color: $label;
+                                            text-align: left;
+
+                                            &:hover {
+                                                background-color: $text_color;
+                                                color: $input_bg_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .form_group {
+                            margin-bottom: 35px;
+                            width: 48%;
+
+                            .form-label {
+                                font-size: 16px;
+                                font-weight: 500;
+                                margin-bottom: 15px;
+                                color: $label;
+
+                            }
+
+                            .form-control {
+                                border-radius: 15px;
+                                border: none;
+                                background-color: $input_bg_color;
+                                padding: 12px 30px;
+                                font-size: 16px;
+                                font-weight: 400;
+                                color: $label;
+                            }
+
+                            p {
+                                margin-bottom: 20px;
+                                font-size: 16px;
+                                line-height: 20px;
+                                font-weight: 500;
+                                color: $label;
+                            }
+
+                            .form-check {
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 15px;
+                                margin-right: 30px;
+
+                                .form-check-input {
+                                    width: 30px;
+                                    height: 30px;
+                                    border-color: $input_bg_color;
+                                    background-color: $input_bg_color;
+                                    margin: 0;
+                                    vertical-align: unset;
+                                    transition: all 0.3s ease;
+
+                                    &:checked {
+                                        background-image: url('../../images/radio.png');
+                                    }
+
+                                    &:focus {
+                                        box-shadow: none;
+                                    }
+                                }
+
+                                .form-check-label {
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    color: $label;
+                                    margin-bottom: 0;
+                                }
+                            }
+
+                            &.email {
+                                width: 100%;
+                            }
+
+                            &.imei {
+                                width: 100%;
+
+                                p {
+                                    font-weight: 400;
+                                }
+                            }
+
+                            &.radios {
+                                margin-bottom: 20px;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    a {
+                        min-width: 140px;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #FFF;
+                        display: inline-block;
+                        border: 1px solid #FFF;
+                        padding: 15px 25px;
+                        border-radius: 15px;
+                        background-color: $primary_color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {}
+
+@media (min-width: 1300px) and (max-width: 1399px) {
+    .sign_up {
+        padding: 70px 0;
+
+        .parent_sign_up {
+
+            .left {
+                width: 530px;
+
+                &::after {}
+
+                .inner_left {
+
+                    .title {
+                        margin-bottom: 50px;
+
+                        h3 {
+                            font-size: 50px;
+                            line-height: 56px;
+                            margin-bottom: 20px;
+                        }
+
+                        p {}
+                    }
+
+                    .girl_image {
+                        height: 789.3px;
+                    }
+                }
+
+                .back_image {}
+            }
+
+            .right {
+                width: calc(100% - 530px);
+
+                .inner_right {
+                    margin: 0 auto 0 70px;
+
+                    .upper_area {
+                        margin-bottom: 50px;
+
+                        .bar {
+
+                            .bar_initial {}
+
+                            .bar_circle {
+
+                                .circle {
+                                    width: 22px;
+                                    height: 22px;
+                                }
+                            }
+                        }
+                    }
+
+                    .lower_area {
+
+                        h3 {
+                            margin-bottom: 40px;
+                            font-size: 33px;
+                        }
+
+                        .form_field {
+                            margin-bottom: 30px;
+
+                            p {
+                                font-size: 27px;
+                                line-height: 33px;
+                            }
+
+                            .name {
+                                margin-bottom: 30px;
+                                gap: 26px;
+
+                                .form_group {
+
+                                    .form-label {}
+
+                                    .form-control {}
+                                }
+                            }
+
+                            .form_group {
+                                margin-bottom: 30px;
+
+                                .form-label {}
+
+                                .form-control {}
+
+                                p {}
+
+                                .form-check {
+
+                                    .form-check-input {}
+
+                                    .form-check-label {}
+                                }
+
+                                &.radios {
+                                    margin-bottom: 20px;
+                                }
+
+                            }
+
+                            .dropdown {
+                                p {}
+
+                                .dropdown-toggle {
+
+
+                                    &::after {}
+                                }
+
+                                .dropdown-menu {
+
+                                    &.show {}
+
+                                    .dropdown-item {}
+                                }
+                            }
+                        }
+
+                        a {
+                            padding: 13px 20px;
+                            border-radius: 13px;
+                            min-width: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .sign_up {
+        padding: 60px 0;
+
+        .parent_sign_up {
+
+            .left {
+                width: 420px;
+
+                &::after {}
+
+                .inner_left {
+                    padding: 60px 30px 0 30px;
+
+                    .title {
+                        margin-bottom: 40px;
+
+                        h3 {
+                            font-size: 43px;
+                            line-height: 51px;
+                            margin-bottom: 16px;
+                        }
+
+                        p {}
+                    }
+
+                    .girl_image {
+                        height: 627.25px;
+                    }
+                }
+
+                .back_image {}
+            }
+
+            .right {
+                width: calc(100% - 420px);
+
+                .inner_right {
+                    margin: 0 auto 0 60px;
+
+                    .upper_area {
+                        margin-bottom: 40px;
+
+                        .bar {
+
+                            .bar_initial {}
+
+                            .bar_circle {
+
+                                .circle {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
+
+                    .lower_area {
+                        h3 {
+                            margin-bottom: 35px;
+                            font-size: 30px;
+                        }
+
+                        .form_field {
+                            margin-bottom: 25px;
+
+                            p {
+                                font-size: 24px;
+                                line-height: 27px;
+                            }
+
+                            .name {
+                                margin-bottom: 25px;
+                                gap: 19px;
+
+                                .form_group {
+
+                                    .form-label {
+                                        font-size: 15px;
+                                    }
+
+                                    .form-control {
+                                        font-size: 15px;
+                                        border-radius: 11px;
+                                    }
+
+                                    .dropdown {
+                                        p {
+                                            margin-bottom: 15px;
+                                            font-size: 15px;
+                                            line-height: 19px;
+                                        }
+
+                                        .dropdown-toggle {
+                                            font-size: 15px;
+                                            border-radius: 11px;
+
+                                            &::after {}
+                                        }
+
+                                        .dropdown-menu {
+
+                                            &.show {}
+
+                                            .dropdown-item {
+
+                                                font-size: 15px;
+                                                padding: 13px 13px;
+                                                border-radius: 8px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .form_group {
+                                margin-bottom: 25px;
+
+                                .form-label {
+                                    font-size: 15px;
+                                }
+
+                                .form-control {
+                                    font-size: 15px;
+                                }
+
+                                p {
+                                    font-size: 15px;
+                                }
+
+                                .form-check {
+                                    margin-right: 20px;
+
+                                    .form-check-input {}
+
+                                    .form-check-label {
+                                        font-size: 15px;
+                                    }
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+                                }
+
+                                &.radios {
+                                    margin-bottom: 20px;
+                                }
+
+                            }
+                        }
+
+                        a {
+                            font-size: 15px;
+                            padding: 13px 13px;
+                            border-radius: 8px;
+                            min-width: 110px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+    .sign_up {
+        padding: 50px 0;
+
+        .parent_sign_up {
+            display: block;
+
+            .left {
+                width: 100%;
+                float: unset;
+                margin-bottom: 30px;
+
+                &::after {
+                    height: 137%;
+                    top: -54px;
+                }
+
+                .inner_left {
+                    padding: 40px 30px 30px 30px;
+                    flex-direction: row;
+                    display: block;
+
+                    .title {
+                        margin-bottom: 0;
+
+                        h3 {
+                            font-size: 34px;
+                            line-height: 40px;
+                            margin-bottom: 14px;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+
+                    .girl_image {
+                        height: 627.25px;
+                        display: none;
+                    }
+                }
+
+                .back_image {
+                    display: none;
+                }
+            }
+
+            .right {
+                width: 100%;
+                float: unset;
+
+                .inner_right {
+                    margin: 0 auto;
+                    width: 93%;
+
+                    .upper_area {
+                        margin-bottom: 30px;
+
+                        .bar {
+
+                            .bar_initial {}
+
+                            .bar_circle {
+
+                                .circle {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
+
+                    .lower_area {
+                        h3 {
+                            margin-bottom: 30px;
+                            font-size: 27px;
+                            line-height: 35px;
+                        }
+
+                        .form_field {
+                            margin-bottom: 20px;
+
+                            p {
+                                font-size: 22px;
+                                line-height: 30px;
+                            }
+
+                            .name {
+                                margin-bottom: 20px;
+                                column-gap: 28px;
+                                row-gap: 20px;
+
+                                .form_group {
+
+                                    .form-label {
+                                        font-size: 15px;
+                                    }
+
+                                    .form-control {
+                                        font-size: 15px;
+                                        border-radius: 10px;
+                                        padding: 10px 20px;
+                                    }
+
+                                    .dropdown {
+                                        p {
+                                            margin-bottom: 15px;
+                                            font-size: 15px;
+                                            line-height: 19px;
+                                        }
+
+                                        .dropdown-toggle {
+                                            font-size: 15px;
+                                            border-radius: 10px;
+                                            padding: 10px 20px;
+
+                                            &::after {}
+                                        }
+
+                                        .dropdown-menu {
+
+                                            &.show {}
+
+                                            .dropdown-item {
+                                                font-size: 15px;
+                                                padding: 13px 13px;
+                                                border-radius: 8px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .form_group {
+                                margin-bottom: 20px;
+
+                                .form-label {
+                                    font-size: 15px;
+                                }
+
+                                .form-control {
+                                    border-radius: 10px;
+                                    padding: 10px 20px;
+                                    font-size: 15px;
+                                }
+
+                                p {
+                                    font-size: 15px;
+                                }
+
+                                .form-check {
+                                    margin-right: 20px;
+
+                                    .form-check-input {
+                                        width: 25px;
+                                        height: 25px;
+                                    }
+
+                                    .form-check-label {
+                                        font-size: 15px;
+                                    }
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+                                }
+
+                                &.radios {
+                                    margin-bottom: 20px;
+                                }
+
+                            }
+                        }
+
+                        a {
+                            font-size: 15px;
+                            padding: 10px 13px;
+                            border-radius: 6px;
+                            min-width: 110px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 1200 desktop only */
+// @media (min-width: 820px) and (max-width: 1000px) {} //// use it when u need it
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+    .sign_up {
+        padding: 40px 0;
+
+        .parent_sign_up {
+            display: block;
+
+            .left {
+                width: 100%;
+                float: unset;
+                margin-bottom: 25px;
+
+                &::after {
+                    height: 137%;
+                    top: -54px;
+                }
+
+                .inner_left {
+                    padding: 25px 20px 20px 20px;
+                    display: block;
+
+                    .title {
+                        margin-bottom: 0;
+
+                        h3 {
+                            font-size: 30px;
+                            line-height: 38px;
+                            margin-bottom: 10px;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+
+                    .girl_image {
+                        height: 627.25px;
+                        display: none;
+                    }
+                }
+
+                .back_image {
+                    display: none;
+                }
+            }
+
+            .right {
+                width: 100%;
+                float: unset;
+
+                .inner_right {
+                    margin: 0 auto;
+                    width: 93%;
+
+                    .upper_area {
+                        margin-bottom: 30px;
+
+                        .bar {
+
+                            .bar_initial {}
+
+                            .bar_circle {
+
+                                .circle {
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+                        }
+                    }
+
+                    .lower_area {
+
+                        h3 {
+                            margin-bottom: 20px;
+                            font-size: 22px;
+                            line-height: 30px;
+                        }
+
+                        .form_field {
+                            margin-bottom: 20px;
+
+                            p {
+                                margin-bottom: 15px;
+                                font-size: 20px;
+                                line-height: 25px;
+                            }
+
+                            .name {
+                                margin-bottom: 20px;
+                                column-gap: 24px;
+                                row-gap: 20px;
+
+                                .form_group {
+
+                                    .form-label {
+                                        font-size: 14px;
+                                        margin-bottom: 12px;
+                                    }
+
+                                    .form-control {
+                                        font-size: 14px;
+                                        border-radius: 6px;
+                                        padding: 8px 13px;
+                                    }
+
+                                    .dropdown {
+                                        p {
+                                            margin-bottom: 15px;
+                                            font-size: 14px;
+                                        }
+
+                                        .dropdown-toggle {
+                                            font-size: 14px;
+                                            border-radius: 6px;
+                                            padding: 8px 13px;
+
+                                            &::after {}
+                                        }
+
+                                        .dropdown-menu {
+
+                                            &.show {}
+
+                                            .dropdown-item {
+                                                font-size: 14px;
+                                                border-radius: 6px;
+                                                padding: 8px 13px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .form_group {
+                                margin-bottom: 20px;
+
+                                .form-label {
+                                    font-size: 14px;
+                                    margin-bottom: 12px;
+                                }
+
+                                .form-control {
+                                    font-size: 14px;
+                                    border-radius: 6px;
+                                    padding: 8px 13px;
+                                }
+
+                                p {
+                                    font-size: 14px;
+                                    margin-bottom: 12px;
+                                }
+
+                                .form-check {
+                                    margin-right: 20px;
+
+                                    .form-check-input {
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+
+                                    .form-check-label {
+                                        font-size: 14px;
+                                        // margin-bottom: 12px;
+                                    }
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+                                }
+
+                                &.radios {
+                                    margin-bottom: 20px;
+                                }
+
+                            }
+                        }
+
+                        a {
+                            font-size: 13px;
+                            padding: 10px 10px;
+                            border-radius: 5px;
+                            min-width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Android portrait screen */
+// @media (min-width: 375px) and (max-width: 667px) {}
+
+//// also this one
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+    .sign_up {
+        padding: 30px 0;
+
+        .parent_sign_up {
+            display: block;
+
+            .left {
+                width: 100%;
+                float: unset;
+                margin-bottom: 20px;
+
+                &::after {
+                    height: 153%;
+                    width: 110%;
+                    top: -54px;
+                    left: 20px;
+                }
+
+                .inner_left {
+                    padding: 15px 10px 10px 10px;
+                    display: block;
+
+                    .title {
+                        margin-bottom: 0;
+
+                        h3 {
+                            font-size: 23px;
+                            line-height: 30px;
+                            margin-bottom: 7px;
+                        }
+
+                        p {
+                            margin: 0;
+                            font-size: 13px;
+                        }
+                    }
+
+                    .girl_image {
+                        height: 627.25px;
+                        display: none;
+                    }
+                }
+
+                .back_image {
+                    display: none;
+                }
+            }
+
+            .right {
+                width: 100%;
+                float: unset;
+
+                .inner_right {
+                    margin: 0 auto;
+                    width: 93%;
+
+                    .upper_area {
+                        margin-bottom: 20px;
+
+                        .bar {
+                            height: 5px;
+
+                            .bar_initial {
+                                height: 5px;
+                            }
+
+                            .bar_circle {
+
+                                .circle {
+                                    width: 15px;
+                                    height: 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    .lower_area {
+
+                        h3 {
+                            margin-bottom: 15px;
+                            font-size: 18px;
+                            line-height: 25px;
+                        }
+
+                        .form_field {
+                            margin-bottom: 20px;
+
+                            p {
+                                margin-bottom: 10px;
+                                font-size: 16px;
+                                line-height: 20px;
+                            }
+
+                            .name {
+                                margin-bottom: 20px;
+                                gap: 20px;
+                                flex-wrap: wrap;
+
+                                .form_group {
+                                    width: 100%;
+                                    flex-basis: 100%;
+
+                                    .form-label {
+                                        font-size: 13px;
+                                        margin-bottom: 9px;
+                                    }
+
+                                    .form-control {
+                                        font-size: 13px;
+                                        border-radius: 5px;
+                                        padding: 7px 12px;
+                                    }
+
+                                    .dropdown {
+                                        p {
+                                            font-size: 13px;
+                                            margin-bottom: 9px;
+                                        }
+
+                                        .dropdown-toggle {
+                                            font-size: 13px;
+                                            border-radius: 5px;
+                                            padding: 7px 12px;
+
+                                            &::after {}
+                                        }
+
+                                        .dropdown-menu {
+
+                                            &.show {}
+
+                                            .dropdown-item {
+                                                font-size: 13px;
+                                                border-radius: 5px;
+                                                padding: 7px 12px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .form_group {
+                                margin-bottom: 20px;
+                                width: 100%;
+
+                                .form-label {
+                                    font-size: 13px;
+                                    margin-bottom: 9px;
+                                }
+
+                                .form-control {
+                                    font-size: 13px;
+                                    border-radius: 5px;
+                                    padding: 7px 12px;
+                                }
+
+                                p {
+                                    font-size: 13px;
+                                    margin-bottom: 9px;
+                                }
+
+                                .form-check {
+                                    margin-right: 20px;
+                                    gap: 10px;
+
+                                    .form-check-input {
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+
+                                    .form-check-label {
+                                        font-size: 13px;
+                                        // margin-bottom: 9px;
+                                    }
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+                                }
+
+                                &.radios {
+                                    margin-bottom: 15px;
+                                }
+
+                            }
+                        }
+
+                        a {
+                            font-size: 13px;
+                            padding: 10px 10px;
+                            border-radius: 5px;
+                            min-width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+    .sign_up {
+        padding: 25px 0;
+
+        .parent_sign_up {
+            display: block;
+
+            .left {
+                width: 100%;
+                float: unset;
+                margin-bottom: 20px;
+
+                &::after {
+                    height: 153%;
+                    width: 110%;
+                    top: -54px;
+                    left: 20px;
+                }
+
+                .inner_left {
+                    padding: 10px;
+                    display: block;
+
+                    .title {
+                        margin-bottom: 0;
+
+                        h3 {
+                            font-size: 19px;
+                            line-height: 25px;
+                            margin-bottom: 7px;
+                        }
+
+                        p {
+                            margin: 0;
+                            font-size: 13px;
+                        }
+                    }
+
+                    .girl_image {
+                        height: 627.25px;
+                        display: none;
+                    }
+                }
+
+                .back_image {
+                    display: none;
+                }
+            }
+
+            .right {
+                width: 100%;
+                float: unset;
+
+                .inner_right {
+                    margin: 0 auto;
+                    width: 93%;
+
+                    .upper_area {
+                        margin-bottom: 15px;
+
+                        .bar {
+                            height: 5px;
+
+                            .bar_initial {
+                                height: 5px;
+                            }
+
+                            .bar_circle {
+
+                                .circle {
+                                    width: 15px;
+                                    height: 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    .lower_area {
+
+                        h3 {
+                            margin-bottom: 15px;
+                            font-size: 15px;
+                            line-height: 22px;
+                        }
+
+                        .form_field {
+                            margin-bottom: 15px;
+
+                            p {
+                                margin-bottom: 10px;
+                                font-size: 14px;
+                                line-height: 18px;
+                            }
+
+                            .name {
+                                margin-bottom: 15px;
+                                gap: 15px;
+                                flex-wrap: wrap;
+
+                                .form_group {
+                                    width: 100%;
+                                    flex-basis: 100%;
+
+                                    .form-label {
+                                        font-size: 12px;
+                                        margin-bottom: 7px;
+                                    }
+
+                                    .form-control {
+                                        font-size: 12px;
+                                        border-radius: 5px;
+                                        padding: 5px 11px;
+                                    }
+
+                                    .dropdown {
+                                        p {
+                                            font-size: 13px;
+                                            margin-bottom: 9px;
+                                        }
+
+                                        .dropdown-toggle {
+                                            font-size: 12px;
+                                            border-radius: 5px;
+                                            padding: 5px 11px;
+
+                                            &::after {}
+                                        }
+
+                                        .dropdown-menu {
+
+                                            &.show {}
+
+                                            .dropdown-item {
+                                                font-size: 12px;
+                                                border-radius: 5px;
+                                                padding: 5px 11px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .form_group {
+                                margin-bottom: 15px;
+                                width: 100%;
+
+                                .form-label {
+                                    font-size: 12px;
+                                    margin-bottom: 7px;
+                                }
+
+                                .form-control {
+                                    font-size: 12px;
+                                    border-radius: 5px;
+                                    padding: 5px 11px;
+                                }
+
+                                p {
+                                    font-size: 12px;
+                                    margin-bottom: 7px;
+                                }
+
+                                .form-check {
+                                    margin-right: 20px;
+                                    gap: 10px;
+
+                                    .form-check-input {
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+
+                                    .form-check-label {
+                                        font-size: 12px;
+                                        // margin-bottom: 7px;
+                                    }
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+                                }
+
+                                &.radios {
+                                    margin-bottom: 15px;
+                                }
+
+                            }
+                        }
+
+                        a {
+                            font-size: 12px;
+                            padding: 7px 11px;
+                            border-radius: 5px;
+                            min-width: 96px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {}
