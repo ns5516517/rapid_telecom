@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image';
 import React, { useState } from 'react';
-import rectangle from '../../images/rectangle.png';
 import girl from '../../images/girl.png';
+import rectangle from '../../images/rectangle.png';
 import '../../sass/pages/sign_up.scss';
 import Sign_up_detail from '@/app/components/sign_up_detail';
 import Sign_up_adress from '@/app/components/sign_up_adress';
