@@ -156,7 +156,7 @@ const Page = () => {
                                             <h4>Are you ready to join us ?</h4>
                                             <p>Lorem ipsum sit dor el ipsum dor dolor sit ipsum lorem dor dolor sit sat lorem ipsum dor sit.</p>
                                             <div className="join_btn">
-                                                <Link href={''} className='btn-primary'>Join</Link>
+                                                <Link href={''} className='btn-primary' prefetch>Join</Link>
                                             </div>
                                         </div>
                                     </Col>

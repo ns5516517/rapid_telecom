@@ -51,7 +51,7 @@ const Banner = () => {
                             <div className="left">
                               <h3>Stay Connected <span>With Rapid</span></h3>
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dolor nihil libero ipsa repellat. Alias.</p>
-                              <Link href={'/'}>Get started <span><FontAwesomeIcon icon={faArrowRight} /></span></Link>
+                              <Link href={'/'} prefetch>Get started <span><FontAwesomeIcon icon={faArrowRight} /></span></Link>
                             </div>
                             <div className="right">
                               <div className="front_image">

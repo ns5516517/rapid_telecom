@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import Link from 'next/link';
 
 
@@ -65,7 +65,7 @@ const Sign_up_detail = (props) => {
                         <Form.Control type='text' placeholder='Enter your device IMEI number' />
                     </Form.Group>
                 </div>
-                <Link href='' onClick={() => props.setStep(props.step + 1)}>Continue</Link>
+                <Button className='btn-primary' onClick={() => props.setStep(props.step + 1)} >Continue</Button >
             </Form>
         </>
     )

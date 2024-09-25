@@ -40,7 +40,7 @@ const Sign_up_password = () => {
                     </div>
                 </div >
                 {/* <Link href='' onClick={() => props.setStep(props.step - 1)}>Back</Link> */}
-                <Link href='/login'>Let&apos;s Go</Link>
+                <Link className='btn-primary' href='/login' prefetch>Let&apos;s Go</Link>
             </Form >
         </div >
     )

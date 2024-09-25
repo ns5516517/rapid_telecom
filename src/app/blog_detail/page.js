@@ -39,16 +39,16 @@ const Page = () => {
         'Lorem ipsum dolor sit amet, con sectetur elit adipiscing elit con sectetur elit.', 'Lorem ipsum dolor sit amet, con sectetur elit adipiscing elit con sectetur elit.', 'Lorem ipsum dolor sit amet, con sectetur elit adipiscing elit con sectetur elit.', 'Lorem ipsum dolor sit amet, con sectetur elit adipiscing elit con sectetur elit.'
     ]
 
-  const handleSubmit =  (e) => {
-    e.preventDefault();
-    // const response = await axios.post('/rating_list', review_data)
-    // console.log(response.data)
-    // if(response.status) {
-    //     router.push(`/rating_list?data = ${review_data.desc}`)
-    // }
-    router.push(`/rating_list?desc=${review_data.desc}&rating=${review_data.ratings}`)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // const response = await axios.post('/rating_list', review_data)
+        // console.log(response.data)
+        // if(response.status) {
+        //     router.push(`/rating_list?data = ${review_data.desc}`)
+        // }
+        router.push(`/rating_list?desc=${review_data.desc}&rating=${review_data.ratings}`)
 
-  }
+    }
 
 
     return (
@@ -139,7 +139,6 @@ const Page = () => {
                                                         </Form>
                                                     </div>
                                                 </Modal.Body>
-
                                             </Modal>
                                         </div>
                                     </Col>

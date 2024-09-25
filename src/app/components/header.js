@@ -66,6 +66,7 @@ const Header = () => {
                                                     return <li key={index}>
                                                         <Link href={item.link}
                                                             className={`link ${pathname === item.link ? 'active' : ''}`}
+                                                            prefetch
                                                         >
                                                             {item.name}
                                                         </Link>
@@ -83,6 +84,7 @@ const Header = () => {
                                                 <li key={index}>
                                                     <Link href={btn.link}
                                                         className={`btn-primary ${btn.link === '/sign_up' ? 'active' : ''}`}
+                                                        prefetch
                                                     >
                                                         {btn.name}
                                                     </Link>
@@ -114,6 +116,7 @@ const Header = () => {
                             return <li key={index}>
                                 <Link href={item.link}
                                     className={`link ${pathname === item.link ? 'active' : ''}`}
+                                    prefetch
                                 >
                                     {item.name}
                                 </Link>

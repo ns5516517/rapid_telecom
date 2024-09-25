@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 const Sign_up_adress = (props) => {
@@ -53,7 +53,7 @@ const Sign_up_adress = (props) => {
                     ))
                 }
                 {/* <Link href='' onClick={() => props.setStep(props.step - 1)}>Back</Link> */}
-                <Link href='' onClick={() => props.setStep(props.step + 1)}>Continue</Link>
+                <Button type='button' className='btn-primary' onClick={() => props.setStep(props.step + 1)}>Continue</Button>
             </Form>
         </div>
     )

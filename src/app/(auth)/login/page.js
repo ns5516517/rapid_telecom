@@ -47,8 +47,8 @@ const Page = () => {
                                             <Form.Control type={show ? 'text' : 'password'} placeholder='Enter new password' required />
                                         </Form.Group>
                                         <div className="forgot_pass"><Link href='/forgot_password'>Forgot Password ?</Link></div>
-                                        <Button type='submit' onClick={() => router.push('/home')} className='btn-primary login_btn'>Login</Button>
-                                        <p>Don&apos;t have an account? <Link href='/sign_up'>Sign Up</Link></p>
+                                        <Button type='submit' onClick={() => router.push('/dashboard/profile')} className='btn-primary login_btn'>Login</Button>
+                                        <p>Don&apos;t have an account? <Link href='/sign_up' prefetch>Sign Up</Link></p>
                                     </Form>
                                 </div>
                             </div>

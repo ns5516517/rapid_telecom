@@ -20,7 +20,7 @@ const Blog_card = ({src, manage_item, desc, date, title, toggle, index}) => {
                 <div className="date">{date}</div>
                 <h4>{title}</h4>
                 <p>{manage_item? desc.concat('Anything else') : desc}</p>
-                <Link className='link' href='/blog_detail' >Read More <span><FontAwesomeIcon icon={freeSolidSvgIcons.faArrowRight} /></span></Link>
+                <Link className='link' href='/blog_detail' prefetch >Read More <span><FontAwesomeIcon icon={freeSolidSvgIcons.faArrowRight} /></span></Link>
                 {/* <Link className='link' onClick={() => toggle(index)} >Read More <span><FontAwesomeIcon icon={freeSolidSvgIcons.faArrowRight} /></span></Link> */}
             </div>
         </div>

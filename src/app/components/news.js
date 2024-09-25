@@ -23,7 +23,7 @@ const News = () => {
                                         <Form.Group className='form-group'>
                                             <Form.Control type='email' placeholder='Enter Email' />
                                             <div className="form_btn">
-                                                <Button type='submit' className='btn-primary register_btn' onClick={() => router.push('/sign_up')}>Register</Button>
+                                                <Button type='submit' className='btn-primary register_btn' onClick={() => router.push('/sign_up')} >Register</Button>
                                             </div>
                                         </Form.Group>
                                     </Form>

@@ -1,7 +1,7 @@
 'use client'
 import Title from '@/app/components/title';
-import React from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import '../../sass/pages/blogs_slider.scss';
 import '../../sass/pages/contact.scss';
 import { faAt, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -20,16 +20,26 @@ const Page = () => {
     { src: <FontAwesomeIcon icon={faAt} />, desc: 'info@samplemail.com' }
   ]
 
+  const [isMounted, setIsMounted] = useState(false);// just to remove a warning from react-select bcs the id on server and client isn't matched
+
+  useEffect(() => setIsMounted(true), []);
+
   const social = [
     { src: <FontAwesomeIcon icon={faFacebookF} />, link: 'https://www.facebook.com/' },
     { src: <FontAwesomeIcon icon={faTwitter} />, link: 'https://x.com/?lang=en' },
     { src: <FontAwesomeIcon icon={faInstagram} />, link: 'https://www.instagram.com/' }
   ]
 
-  const options = [
+  const city = [
     { value: 'india', label: 'india' },
     { value: 'australia', label: 'australia' },
     { value: 'england', label: 'england' }
+  ]
+
+  const subject = [
+    { value: '1', label: 'telecom' },
+    { value: '2', label: 'lorem' },
+    { value: '3', label: 'lorem' }
   ]
 
   return (
@@ -45,7 +55,7 @@ const Page = () => {
           </Row>
         </Container>
       </section>
-      <section className="contact_area">
+      <section className="contact_area cms">
         <Container>
           <Row>
             <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12} >
@@ -64,7 +74,7 @@ const Page = () => {
                     <ul className="social">
                       {
                         social.map((ele, i) => (
-                          <li key={i}><Link href={ele.link} target='_blank'>{ele.src}</Link></li>
+                          <li key={i}><Link href={ele.link} target='_blank' prefetch>{ele.src}</Link></li>
                         ))
                       }
                     </ul>
@@ -79,59 +89,72 @@ const Page = () => {
                 <div className="right">
                   <Form className='form'>
                     <Row>
-
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field" controlId='fname'>
                           <Form.Label>First Name</Form.Label>
                           <Form.Control type='text' placeholder='Enter your first name' />
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field" controlId='lname'>
                           <Form.Label>Last Name</Form.Label>
                           <Form.Control type='text' placeholder='Enter your last name' />
                         </Form.Group>
                       </Col>
                       <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field" controlId='email' >
                           <Form.Label>Email</Form.Label>
-                          <Form.Control type='email' placeholder='Enter your email' />
+                          <Form.Control type='email' placeholder='Enter your email' autoComplete='email'/>
                         </Form.Group>
                       </Col>
                       <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field" controlId='phone' >
                           <Form.Label>Phone number</Form.Label>
-                          <Form.Control type='tel' placeholder='Enter your phone no.' />
+                          <Form.Control type='tel' placeholder='Enter your phone no.' autoComplete='mobile tel-local'/>
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field" >
                           <Form.Label>City</Form.Label>
+                          {
+                            isMounted && 
                           <Select className='form-control'
                           classNamePrefix='select'
-                            options={options}
-                            />
+                          options={city}
+                          placeholder='Enter City'
+                          />
+                        }
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field" controlId='zip'>
                           <Form.Label>ZIP Code</Form.Label>
                           <Form.Control type='text' />
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field" > 
                           <Form.Label>Subject</Form.Label>
-                          <Form.Control type='text' />
+                          {
+                            isMounted &&
+                            <Select className='form-control'
+                            classNamePrefix='select'
+                            options={subject}
+                            placeholder='Choose Subject'
+                            />
+                          }
                         </Form.Group>
                       </Col>
                       <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field">
+                        <Form.Group className="form_field message" controlId='message'>
                           <Form.Label>Message</Form.Label>
                           <Form.Control as='textarea' rows={7} placeholder='Write Your Message' />
                         </Form.Group>
                       </Col>
                     </Row>
+                    <div className="submit_btn">
+                      <Button className='btn-primary' type='submit'>Submit</Button>
+                    </div>
                   </Form>
                 </div>
               </div>

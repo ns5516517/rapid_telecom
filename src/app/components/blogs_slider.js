@@ -91,7 +91,7 @@ const Blogs_Slider = () => {
                                     </div>
                                 </div>
                                 <div className="view_all">
-                                    <Link className='view_more' href='/'>VIEW ALL BLOGS</Link>
+                                    <Link className='view_more' href='/blogs' prefetch>VIEW ALL BLOGS</Link>
                                 </div>
                             </div>
                         </Col>

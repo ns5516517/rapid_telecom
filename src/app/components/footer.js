@@ -29,9 +29,9 @@ const Footer = () => {
     ]
 
     const social_media = [
-        { name: <FontAwesomeIcon icon={faFacebookF} />, link: '/facebook' },
-        { name: <FontAwesomeIcon icon={faTwitter} />, link: '/twitter' },
-        { name: <FontAwesomeIcon icon={faInstagram} />, link: '/instagram' },
+        { name: <FontAwesomeIcon icon={faFacebookF} />, link: 'https://www.facebook.com/' },
+        { name: <FontAwesomeIcon icon={faTwitter} />, link: 'https://www.twitter.com/' },
+        { name: <FontAwesomeIcon icon={faInstagram} />, link: 'https://www.instagram.com/' },
     ]
 
     return (
@@ -52,7 +52,7 @@ const Footer = () => {
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis libero elit, at rhoncus neque dignissim ac. Morbi suscipit nisl magna. Aliquam hendrerit.</p>
                                             <ul>
                                                 {social_media.map((icon, index) => (
-                                                    <li key={index}><Link href={icon.link}>{icon.name}</Link></li>
+                                                    <li key={index}><Link href={icon.link} prefetch target='_blank' >{icon.name}</Link></li>
                                                 ))}
                                             </ul>
                                         </div>
@@ -68,7 +68,7 @@ const Footer = () => {
                                                                 <ul>
                                                                     {
                                                                         item.data.map((ele, i) => (
-                                                                            <li key={i}><Link href={ele.link}>{ele.name}</Link></li>
+                                                                            <li key={i}><Link href={ele.link} prefetch >{ele.name}</Link></li>
                                                                         ))
                                                                     }
                                                                 </ul>
