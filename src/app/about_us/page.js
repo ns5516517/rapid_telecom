@@ -5,7 +5,7 @@ import Image from 'next/image';
 import '../sass/pages/blogs_slider.scss';
 import '../sass/pages/about_page.scss';
 import Title from '../components/title';
-import vector from '../images/vector_1.png';
+import vector from '../images/Vector_1.png';
 import Link from 'next/link';
 
 
