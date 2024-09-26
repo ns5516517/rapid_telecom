@@ -1,191 +1,195 @@
 @import "../base/variable.scss";
 @import "../base/mixins.scss";
 
-.profile_view {
-    padding: 25px 30px;
-    background-color: $white;
-    box-shadow: 0px 0px 34px $dashboard_shadow;
-    border-radius: 10px;
+.profile {
+    padding: 90px 30px;
 
-    .user_panel {
-        display: flex;
+    .profile_view {
+        padding: 25px 30px;
+        background-color: $white;
+        box-shadow: 0px 0px 34px $dashboard_shadow;
+        border-radius: 10px;
 
-        .user_left_area {
-            width: calc(100% - 200px);
-            flex-shrink: 0;
+        .user_panel {
+            display: flex;
 
-            .user_field {
-                display: flex;
-                margin-bottom: 30px;
+            .user_left_area {
+                width: calc(100% - 200px);
+                flex-shrink: 0;
 
-                &:last-child {
-                    margin-bottom: 0;
-                }
+                .user_field {
+                    display: flex;
+                    margin-bottom: 30px;
 
-                .title {
-                    font-size: 16px;
-                    line-height: 24px;
-                    font-weight: 500;
-                    color: $dashboard_text_clr;
-                    width: 250px;
-                    flex-shrink: 0;
-                }
-
-                .desc {
-                    color: $user_text_color;
-                    font-size: 16px;
-                    line-height: 24px;
-                    font-weight: 500;
-                    flex-grow: 1;
-                    position: relative;
-                    padding-left: 15px;
-                    word-break: break-word;
-
-                    &::before {
-                        content: ':';
-                        position: absolute;
-                        left: 0;
+                    &:last-child {
+                        margin-bottom: 0;
                     }
-                }
-            }
-        }
 
-        .user_right_area {
-            width: 200px;
-            flex-shrink: 0;
+                    .title {
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 500;
+                        color: $dashboard_text_clr;
+                        width: 250px;
+                        flex-shrink: 0;
+                    }
 
-            .edit_btn {
-                display: block;
-                background-color: $secondary_color;
-                color: $white;
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: 500;
-                padding: 12px 20px;
-                border-radius: 15px;
-                width: 150px;
-                text-align: center;
-                margin: 0 auto;
-                transition: all 0.3s ease;
+                    .desc {
+                        color: $user_text_color;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 500;
+                        flex-grow: 1;
+                        position: relative;
+                        padding-left: 15px;
+                        word-break: break-word;
 
-                &:hover {
-                    background-color: $active_btn_hover_color;
-                }
-            }
-        }
-    }
-
-    &.edit_profile_view {
-        .user_edit_panel {
-            .edit_image_area {
-                margin-bottom: 40px;
-
-                .image {
-                    width: 100px;
-                    height: 100px;
-                    position: relative;
-                    margin: 0 auto;
-
-                    .user_image {
-                        height: 100%;
-                        overflow: hidden;
-                        border-radius: 50%;
-                        margin: 0 auto;
-                        box-shadow: 0px 14px 29px rgba(0, 0, 0, 0.25);
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
+                        &::before {
+                            content: ':';
+                            position: absolute;
+                            left: 0;
                         }
                     }
+                }
+            }
 
-                    .form {
-                        position: absolute;
-                        right: 0;
-                        bottom: 0;
-                        z-index: 9999;
+            .user_right_area {
+                width: 200px;
+                flex-shrink: 0;
 
-                        .form-group {
-                            width: 32px;
-                            height: 32px;
-                            margin-bottom: 0;
+                .edit_btn {
+                    display: block;
+                    background-color: $secondary_color;
+                    color: $white;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 500;
+                    padding: 12px 20px;
+                    border-radius: 15px;
+                    width: 150px;
+                    text-align: center;
+                    margin: 0 auto;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: $active_btn_hover_color;
+                    }
+                }
+            }
+        }
+
+        &.edit_profile_view {
+            .user_edit_panel {
+                .edit_image_area {
+                    margin-bottom: 40px;
+
+                    .image {
+                        width: 100px;
+                        height: 100px;
+                        position: relative;
+                        margin: 0 auto;
+
+                        .user_image {
+                            height: 100%;
+                            overflow: hidden;
                             border-radius: 50%;
-                            background-color: $white;
-                            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
-                            text-align: center;
+                            margin: 0 auto;
+                            box-shadow: 0px 14px 29px rgba(0, 0, 0, 0.25);
 
-                            .form-label {
-                                cursor: pointer;
+                            img {
                                 width: 100%;
                                 height: 100%;
-                                line-height: 32px;
-                                font-size: 14px;
-                                margin-bottom: 0;
+                                object-fit: cover;
                             }
+                        }
 
-                            .form-control {}
+                        .form {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            z-index: 9999;
+
+                            .form-group {
+                                width: 32px;
+                                height: 32px;
+                                margin-bottom: 0;
+                                border-radius: 50%;
+                                background-color: $white;
+                                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+                                text-align: center;
+
+                                .form-label {
+                                    cursor: pointer;
+                                    width: 100%;
+                                    height: 100%;
+                                    line-height: 32px;
+                                    font-size: 14px;
+                                    margin-bottom: 0;
+                                }
+
+                                .form-control {}
+                            }
                         }
                     }
                 }
-            }
 
-            .edit_field_area {
-                .form_main {
-                    .inner_form {
-                        margin-bottom: 40px;
+                .edit_field_area {
+                    .form_main {
+                        .inner_form {
+                            margin-bottom: 40px;
 
-                        .form-group {
-                            margin-bottom: 20px;
+                            .form-group {
+                                margin-bottom: 20px;
 
-                            &.message {
-                                margin-bottom: 0px;
-                            }
+                                &.message {
+                                    margin-bottom: 0px;
+                                }
 
-                            .form-label {
-                                margin-bottom: 15px;
-                                font-size: 16px;
-                                line-height: 22px;
-                                font-weight: 500;
-                                color: $label;
+                                .form-label {
+                                    margin-bottom: 15px;
+                                    font-size: 16px;
+                                    line-height: 22px;
+                                    font-weight: 500;
+                                    color: $label;
 
-                            }
+                                }
 
-                            .form-control {
-                                padding: 13px 23px;
-                                box-shadow: none;
-                                outline: none;
-                                border: none;
-                                border-radius: 15px;
-                                background-color: $input_bg_color;
-                                font-size: 16px;
-                                line-height: 22px;
-                                color: $label;
+                                .form-control {
+                                    padding: 13px 23px;
+                                    box-shadow: none;
+                                    outline: none;
+                                    border: none;
+                                    border-radius: 15px;
+                                    background-color: $input_bg_color;
+                                    font-size: 16px;
+                                    line-height: 22px;
+                                    color: $label;
+                                }
                             }
                         }
-                    }
 
-                    .edit_btn_area {
-                        text-align: right;
+                        .edit_btn_area {
+                            text-align: right;
 
-                        .btn-primary {
-                            text-align: center;
-                            margin-right: 10px;
-                            border-radius: 15px;
-                            background-color: $secondary_color;
-                            color: $white;
-                            font-size: 14px;
-                            line-height: 20px;
-                            font-weight: 500;
-                            padding: 12px 22px;
-                            width: 150px;
+                            .btn-primary {
+                                text-align: center;
+                                margin-right: 10px;
+                                border-radius: 15px;
+                                background-color: $secondary_color;
+                                color: $white;
+                                font-size: 14px;
+                                line-height: 20px;
+                                font-weight: 500;
+                                padding: 12px 22px;
+                                width: 150px;
 
-                            &:hover {
-                                background-color: $active_btn_hover_color;
-                            }
+                                &:hover {
+                                    background-color: $active_btn_hover_color;
+                                }
 
-                            &:last-child {
-                                margin-right: 0;
+                                &:last-child {
+                                    margin-right: 0;
+                                }
                             }
                         }
                     }
@@ -212,61 +216,65 @@
 @media (min-width: 1400px) and (max-width: 1599px) {}
 
 @media (min-width: 1300px) and (max-width: 1399px) {
-    .profile_view {
+    .profile {
+        padding: 70px 30px;
 
-        .user_panel {
+        .profile_view {
 
-            .user_left_area {
-                width: calc(100% - 200px);
+            .user_panel {
 
-                .user_field {
+                .user_left_area {
+                    width: calc(100% - 200px);
 
-                    .title {}
+                    .user_field {
 
-                    .desc {}
-                }
-            }
+                        .title {}
 
-            .user_right_area {
-
-                .edit_btn {}
-            }
-        }
-
-        &.edit_profile_view {
-            .user_edit_panel {
-                .edit_image_area {
-
-                    .image {
-
-                        .user_image {}
-
-                        .form {
-
-                            .form-group {
-
-                                .form-label {}
-                            }
-                        }
+                        .desc {}
                     }
                 }
 
-                .edit_field_area {
-                    .form_main {
-                        .inner_form {
-                            .form-group {
+                .user_right_area {
 
+                    .edit_btn {}
+                }
+            }
 
-                                .form-label {}
+            &.edit_profile_view {
+                .user_edit_panel {
+                    .edit_image_area {
 
-                                .form-control {
-                                    border-radius: 12px;
+                        .image {
+
+                            .user_image {}
+
+                            .form {
+
+                                .form-group {
+
+                                    .form-label {}
                                 }
                             }
                         }
+                    }
 
-                        .edit_btn_area {
-                            .btn-primary {}
+                    .edit_field_area {
+                        .form_main {
+                            .inner_form {
+                                .form-group {
+
+
+                                    .form-label {}
+
+                                    .form-control {
+                                        border-radius: 12px;
+                                    }
+                                }
+                            }
+
+                            .edit_btn_area {
+                                .btn-primary {}
+                            }
                         }
                     }
                 }
@@ -277,68 +285,73 @@
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .profile_view {
-        padding: 20px 25px;
+    .profile {
+        padding: 60px 30px;
 
-        .user_panel {
+        .profile_view {
+            padding: 20px 25px;
 
-            .user_left_area {
-                width: calc(100% - 200px);
+            .user_panel {
 
-                .user_field {
+                .user_left_area {
+                    width: calc(100% - 200px);
 
-                    .title {}
+                    .user_field {
 
-                    .desc {}
-                }
-            }
+                        .title {}
 
-            .user_right_area {
-
-                .edit_btn {
-                    border-radius: 10px;
-                    padding: 10px;
-                }
-            }
-        }
-
-        &.edit_profile_view {
-            .user_edit_panel {
-                .edit_image_area {
-                    margin-bottom: 30px;
-
-                    .image {
-
-                        .user_image {}
-
-                        .form {
-
-                            .form-group {
-
-                                .form-label {}
-                            }
-                        }
+                        .desc {}
                     }
                 }
 
-                .edit_field_area {
-                    .form_main {
-                        .inner_form {
-                            margin-bottom: 30px;
-                            .form-group {
-                                .form-label {}
+                .user_right_area {
 
-                                .form-control {
-                                    border-radius: 10px;
-                                    padding: 12px 17px;
+                    .edit_btn {
+                        border-radius: 10px;
+                        padding: 10px;
+                    }
+                }
+            }
+
+            &.edit_profile_view {
+                .user_edit_panel {
+                    .edit_image_area {
+                        margin-bottom: 30px;
+
+                        .image {
+
+                            .user_image {}
+
+                            .form {
+
+                                .form-group {
+
+                                    .form-label {}
                                 }
                             }
                         }
+                    }
 
-                        .edit_btn_area {
-                            .btn-primary {
-                                border-radius: 10px;
-                                padding: 10px;
+                    .edit_field_area {
+                        .form_main {
+                            .inner_form {
+                                margin-bottom: 30px;
+
+                                .form-group {
+                                    .form-label {}
+
+                                    .form-control {
+                                        border-radius: 10px;
+                                        padding: 12px 17px;
+                                    }
+                                }
+                            }
+
+                            .edit_btn_area {
+                                .btn-primary {
+                                    border-radius: 10px;
+                                    padding: 10px;
+                                }
                             }
                         }
                     }
@@ -350,92 +363,96 @@
 
 /* Landscape tablets and ipad */
 @media (min-width: 768px) and (max-width: 991px) {
-    .profile_view {
-        padding: 15px 20px;
+    .profile {
+        padding: 50px 20px;
 
-        .user_panel {
-            flex-direction: column;
+        .profile_view {
+            padding: 15px 20px;
 
-            .user_left_area {
-                width: 100%;
-                margin-bottom: 25px;
+            .user_panel {
+                flex-direction: column;
 
-                .user_field {
+                .user_left_area {
+                    width: 100%;
                     margin-bottom: 25px;
 
-                    .title {
-                        font-size: 15px;
-                        line-height: 22px;
-                        width: 220px;
-                    }
+                    .user_field {
+                        margin-bottom: 25px;
 
-                    .desc {
-                        font-size: 15px;
-                        line-height: 22px;
-                    }
-                }
-            }
+                        .title {
+                            font-size: 15px;
+                            line-height: 22px;
+                            width: 220px;
+                        }
 
-            .user_right_area {
-                width: 100%;
-
-                .edit_btn {
-                    border-radius: 6px;
-                    padding: 8px 12px;
-                    width: 130px;
-                }
-            }
-        }
-
-        &.edit_profile_view {
-            .user_edit_panel {
-                .edit_image_area {
-                    margin-bottom: 25px;
-
-                    .image {
-                        width: 90px;
-                        height: 90px;
-
-                        .user_image {}
-
-                        .form {
-
-                            .form-group {
-                                width: 29px;
-                                height: 29px;
-
-                                .form-label {
-                                    line-height: 29px;
-                                    font-size: 13px;
-                                }
-                            }
+                        .desc {
+                            font-size: 15px;
+                            line-height: 22px;
                         }
                     }
                 }
 
-                .edit_field_area {
-                    .form_main {
-                        .inner_form {
-                            margin-bottom: 25px;
+                .user_right_area {
+                    width: 100%;
 
-                            .form-group {
-                                .form-label {
-                                    font-size: 15px;
-                                    margin-bottom: 13px;
+                    .edit_btn {
+                        border-radius: 6px;
+                        padding: 8px 12px;
+                        width: 130px;
+                    }
+                }
+            }
+
+            &.edit_profile_view {
+                .user_edit_panel {
+                    .edit_image_area {
+                        margin-bottom: 25px;
+
+                        .image {
+                            width: 90px;
+                            height: 90px;
+
+                            .user_image {}
+
+                            .form {
+
+                                .form-group {
+                                    width: 29px;
+                                    height: 29px;
+
+                                    .form-label {
+                                        line-height: 29px;
+                                        font-size: 13px;
+                                    }
                                 }
+                            }
+                        }
+                    }
 
-                                .form-control {
+                    .edit_field_area {
+                        .form_main {
+                            .inner_form {
+                                margin-bottom: 25px;
+
+                                .form-group {
+                                    .form-label {
+                                        font-size: 15px;
+                                        margin-bottom: 13px;
+                                    }
+
+                                    .form-control {
+                                        border-radius: 6px;
+                                        padding: 10px 13px;
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+
+                            .edit_btn_area {
+                                .btn-primary {
                                     border-radius: 6px;
-                                    padding: 10px 13px;
-                                    font-size: 15px;
+                                    padding: 8px 12px;
                                 }
-                            }
-                        }
-
-                        .edit_btn_area {
-                            .btn-primary {
-                                border-radius: 6px;
-                                padding: 8px 12px;
                             }
                         }
                     }
@@ -450,99 +467,103 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 576px) and (max-width: 767px) {
-    .profile_view {
-        padding: 12px 17px;
+    .profile {
+        padding: 40px 20px;
 
-        .user_panel {
-            flex-direction: column;
+        .profile_view {
+            padding: 12px 17px;
 
-            .user_left_area {
-                width: 100%;
-                margin-bottom: 20px;
+            .user_panel {
+                flex-direction: column;
 
-                .user_field {
-                    margin-bottom: 15px;
-
-                    .title {
-                        font-size: 14px;
-                        line-height: 21px;
-                        width: 250px;
-                    }
-
-                    .desc {
-                        font-size: 14px;
-                        line-height: 21px;
-                    }
-                }
-            }
-
-            .user_right_area {
-                width: 100%;
-
-                .edit_btn {
-                    border-radius: 6px;
-                    padding: 8px 12px;
-                    width: 110px;
-                    font-size: 13px;
-                    line-height: 19px;
-                }
-            }
-        }
-
-        &.edit_profile_view {
-            .user_edit_panel {
-                .edit_image_area {
+                .user_left_area {
+                    width: 100%;
                     margin-bottom: 20px;
 
-                    .image {
-                        width: 85px;
-                        height: 85px;
+                    .user_field {
+                        margin-bottom: 15px;
 
-                        .user_image {}
+                        .title {
+                            font-size: 14px;
+                            line-height: 21px;
+                            width: 250px;
+                        }
 
-                        .form {
-
-                            .form-group {
-                                width: 25px;
-                                height: 25px;
-
-                                .form-label {
-                                    line-height: 25px;
-                                    font-size: 13px;
-                                }
-                            }
+                        .desc {
+                            font-size: 14px;
+                            line-height: 21px;
                         }
                     }
                 }
 
-                .edit_field_area {
-                    .form_main {
-                        .inner_form {
-                            margin-bottom: 20px;
+                .user_right_area {
+                    width: 100%;
 
-                            .form-group {
-                                margin-bottom: 15px;
+                    .edit_btn {
+                        border-radius: 6px;
+                        padding: 8px 12px;
+                        width: 110px;
+                        font-size: 13px;
+                        line-height: 19px;
+                    }
+                }
+            }
 
-                                .form-label {
-                                    font-size: 14px;
-                                    margin-bottom: 10px;
-                                }
+            &.edit_profile_view {
+                .user_edit_panel {
+                    .edit_image_area {
+                        margin-bottom: 20px;
 
-                                .form-control {
-                                    border-radius: 6px;
-                                    padding: 6px 11px;
-                                    font-size: 14px;
+                        .image {
+                            width: 85px;
+                            height: 85px;
+
+                            .user_image {}
+
+                            .form {
+
+                                .form-group {
+                                    width: 25px;
+                                    height: 25px;
+
+                                    .form-label {
+                                        line-height: 25px;
+                                        font-size: 13px;
+                                    }
                                 }
                             }
                         }
+                    }
 
-                        .edit_btn_area {
-                            .btn-primary {
-                                border-radius: 6px;
-                                padding: 8px 12px;
-                                width: 120px;
-                                font-size: 13px;
-                                line-height: 19px;
+                    .edit_field_area {
+                        .form_main {
+                            .inner_form {
+                                margin-bottom: 20px;
+
+                                .form-group {
+                                    margin-bottom: 15px;
+
+                                    .form-label {
+                                        font-size: 14px;
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .form-control {
+                                        border-radius: 6px;
+                                        padding: 6px 11px;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+
+                            .edit_btn_area {
+                                .btn-primary {
+                                    border-radius: 6px;
+                                    padding: 8px 12px;
+                                    width: 120px;
+                                    font-size: 13px;
+                                    line-height: 19px;
+                                }
                             }
                         }
                     }
@@ -559,102 +580,106 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 361px) and (max-width: 575px) {
-    .profile_view {
-        padding: 10px 15px;
-        border-radius: 6px;
+    .profile {
+        padding: 30px 12px;
 
-        .user_panel {
-            flex-direction: column;
+        .profile_view {
+            padding: 10px 15px;
+            border-radius: 6px;
 
-            .user_left_area {
-                width: 100%;
-                margin-bottom: 15px;
+            .user_panel {
+                flex-direction: column;
 
-                .user_field {
-                    margin-bottom: 10px;
-
-                    .title {
-                        font-size: 13px;
-                        line-height: 21px;
-                        width: 175px;
-                    }
-
-                    .desc {
-                        font-size: 13px;
-                        line-height: 21px;
-                    }
-                }
-            }
-
-            .user_right_area {
-                width: 100%;
-
-                .edit_btn {
-                    border-radius: 6px;
-                    padding: 6px 12px;
-                    font-size: 13px;
-                    width: 100px;
-                    line-height: 19px;
-                }
-            }
-        }
-
-        &.edit_profile_view {
-            .user_edit_panel {
-                .edit_image_area {
+                .user_left_area {
+                    width: 100%;
                     margin-bottom: 15px;
 
-                    .image {
-                        width: 85px;
-                        height: 85px;
+                    .user_field {
+                        margin-bottom: 10px;
 
-                        .user_image {}
+                        .title {
+                            font-size: 13px;
+                            line-height: 21px;
+                            width: 175px;
+                        }
 
-                        .form {
-
-                            .form-group {
-                                width: 25px;
-                                height: 25px;
-
-                                .form-label {
-                                    line-height: 25px;
-                                    font-size: 13px;
-                                }
-                            }
+                        .desc {
+                            font-size: 13px;
+                            line-height: 21px;
                         }
                     }
                 }
 
-                .edit_field_area {
-                    .form_main {
-                        .inner_form {
-                            margin-bottom: 15px;
+                .user_right_area {
+                    width: 100%;
 
-                            .form-group {
-                                margin-bottom: 15px;
+                    .edit_btn {
+                        border-radius: 6px;
+                        padding: 6px 12px;
+                        font-size: 13px;
+                        width: 100px;
+                        line-height: 19px;
+                    }
+                }
+            }
 
-                                .form-label {
-                                    font-size: 13px;
-                                    margin-bottom: 7px;
-                                }
+            &.edit_profile_view {
+                .user_edit_panel {
+                    .edit_image_area {
+                        margin-bottom: 15px;
 
-                                .form-control {
-                                    border-radius: 6px;
-                                    padding: 7px 11px;
-                                    font-size: 13px;
+                        .image {
+                            width: 85px;
+                            height: 85px;
+
+                            .user_image {}
+
+                            .form {
+
+                                .form-group {
+                                    width: 25px;
+                                    height: 25px;
+
+                                    .form-label {
+                                        line-height: 25px;
+                                        font-size: 13px;
+                                    }
                                 }
                             }
                         }
+                    }
 
-                        .edit_btn_area {
-                            text-align: center;
+                    .edit_field_area {
+                        .form_main {
+                            .inner_form {
+                                margin-bottom: 15px;
 
-                            .btn-primary {
-                                width: 120px;
-                                line-height: 19px;
-                                border-radius: 6px;
-                                padding: 6px 12px;
-                                font-size: 13px;
+                                .form-group {
+                                    margin-bottom: 15px;
+
+                                    .form-label {
+                                        font-size: 13px;
+                                        margin-bottom: 7px;
+                                    }
+
+                                    .form-control {
+                                        border-radius: 6px;
+                                        padding: 7px 11px;
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+
+                            .edit_btn_area {
+                                text-align: center;
+
+                                .btn-primary {
+                                    width: 120px;
+                                    line-height: 19px;
+                                    border-radius: 6px;
+                                    padding: 6px 12px;
+                                    font-size: 13px;
+                                }
                             }
                         }
                     }
@@ -666,102 +691,106 @@
 
 /* Smaller phones */
 @media (max-width: 360px) {
-    .profile_view {
-        padding: 8px 13px;
-        border-radius: 6px;
+    .profile {
+        padding: 25px 8px;
 
-        .user_panel {
-            flex-direction: column;
+        .profile_view {
+            padding: 8px 13px;
+            border-radius: 6px;
 
-            .user_left_area {
-                width: 100%;
-                margin-bottom: 15px;
+            .user_panel {
+                flex-direction: column;
 
-                .user_field {
-                    margin-bottom: 7px;
+                .user_left_area {
+                    width: 100%;
+                    margin-bottom: 15px;
 
-                    .title {
-                        font-size: 13px;
-                        line-height: 21px;
-                        width: 140px;
-                    }
+                    .user_field {
+                        margin-bottom: 7px;
 
-                    .desc {
-                        font-size: 13px;
-                        line-height: 21px;
-                    }
-                }
-            }
+                        .title {
+                            font-size: 13px;
+                            line-height: 21px;
+                            width: 140px;
+                        }
 
-            .user_right_area {
-                width: 100%;
-
-                .edit_btn {
-                    border-radius: 6px;
-                    padding: 6px 12px;
-                    font-size: 12px;
-                    width: 95px;
-                    line-height: 19px;
-                }
-            }
-        }
-
-        &.edit_profile_view {
-            .user_edit_panel {
-                .edit_image_area {
-                    margin-bottom: 10px;
-
-                    .image {
-                        width: 75px;
-                        height: 75px;
-
-                        .user_image {}
-
-                        .form {
-
-                            .form-group {
-                                width: 25px;
-                                height: 25px;
-
-                                .form-label {
-                                    line-height: 25px;
-                                    font-size: 13px;
-                                }
-                            }
+                        .desc {
+                            font-size: 13px;
+                            line-height: 21px;
                         }
                     }
                 }
 
-                .edit_field_area {
-                    .form_main {
-                        .inner_form {
-                            margin-bottom: 10px;
+                .user_right_area {
+                    width: 100%;
 
-                            .form-group {
-                                margin-bottom: 15px;
+                    .edit_btn {
+                        border-radius: 6px;
+                        padding: 6px 12px;
+                        font-size: 12px;
+                        width: 95px;
+                        line-height: 19px;
+                    }
+                }
+            }
 
-                                .form-label {
-                                    font-size: 13px;
-                                    margin-bottom: 7px;
+            &.edit_profile_view {
+                .user_edit_panel {
+                    .edit_image_area {
+                        margin-bottom: 10px;
+
+                        .image {
+                            width: 75px;
+                            height: 75px;
+
+                            .user_image {}
+
+                            .form {
+
+                                .form-group {
+                                    width: 25px;
+                                    height: 25px;
+
+                                    .form-label {
+                                        line-height: 25px;
+                                        font-size: 13px;
+                                    }
                                 }
+                            }
+                        }
+                    }
 
-                                .form-control {
+                    .edit_field_area {
+                        .form_main {
+                            .inner_form {
+                                margin-bottom: 10px;
+
+                                .form-group {
+                                    margin-bottom: 10px;
+
+                                    .form-label {
+                                        font-size: 13px;
+                                        margin-bottom: 7px;
+                                    }
+
+                                    .form-control {
+                                        border-radius: 6px;
+                                        padding: 6px 9px;
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+
+                            .edit_btn_area {
+                                text-align: center;
+
+                                .btn-primary {
+                                    width: 120px;
+                                    line-height: 19px;
                                     border-radius: 6px;
-                                    padding: 6px 9px;
+                                    padding: 6px 12px;
                                     font-size: 13px;
                                 }
-                            }
-                        }
-
-                        .edit_btn_area {
-                            text-align: center;
-
-                            .btn-primary {
-                                width: 120px;
-                                line-height: 19px;
-                                border-radius: 6px;
-                                padding: 6px 12px;
-                                font-size: 13px;
                             }
                         }
                     }

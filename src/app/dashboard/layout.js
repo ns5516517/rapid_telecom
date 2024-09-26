@@ -13,7 +13,7 @@ const Dashboard_Layout = ({ children }) => {
     const links = [
         { name: "Profile", link: '/dashboard/profile', icon: <FontAwesomeIcon icon={faUser} /> },
         { name: "Create Blog", link: '/dashboard/create_blog', icon: <FontAwesomeIcon icon={faSquarePlus} /> },
-        { name: "Blogs", link: '/dashboard/tansactions', icon: <FontAwesomeIcon icon={faBlog} /> },
+        { name: "Blogs", link: '/dashboard/transactions', icon: <FontAwesomeIcon icon={faBlog} /> },
         { name: "My Wishlist", link: '/dashboard/wishlist', icon: <FontAwesomeIcon icon={faHeart} /> },
         { name: "Change Password", link: '/dashboard/change_password', icon: <FontAwesomeIcon icon={faLock} /> },
         { name: "Logout", link: '/', icon: <FontAwesomeIcon icon={faArrowRightFromBracket} /> },

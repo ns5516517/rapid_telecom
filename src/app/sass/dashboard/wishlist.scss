@@ -1,0 +1,186 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+.wishlist {
+    padding: 90px 30px;
+
+    .wishlist_card {
+        .wishlist_card_item {
+            width: 100%;
+            position: relative;
+
+            .heart {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                color: $secondary_color;
+                font-size: 22px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {}
+
+@media (min-width: 1300px) and (max-width: 1399px) {
+    .wishlist {
+        padding: 70px 30px;
+
+        .wishlist_card {
+            .wishlist_card_item {
+                width: 100%;
+                position: relative;
+
+                .heart {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    color: $secondary_color;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .wishlist {
+        padding: 60px 30px;
+
+        .wishlist_card {
+            .wishlist_card_item {
+                width: 100%;
+                position: relative;
+
+                .heart {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    color: $secondary_color;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+    .wishlist {
+        padding: 50px 20px;
+
+        .wishlist_card {
+            .wishlist_card_item {
+                width: 100%;
+                position: relative;
+
+                .heart {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    color: $secondary_color;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* 1200 desktop only */
+// @media (min-width: 820px) and (max-width: 1000px) {} //// use it when u need it
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+    .wishlist {
+        padding: 40px 20px;
+
+        .wishlist_card {
+            .wishlist_card_item {
+                width: 100%;
+                position: relative;
+
+                .heart {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    color: $secondary_color;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Android portrait screen */
+@media (min-width: 375px) and (max-width: 667px) {}
+
+//// also this one
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+    .wishlist {
+        padding: 30px 12px;
+
+        .wishlist_card {
+            .wishlist_card_item {
+                width: 100%;
+                position: relative;
+
+                .heart {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    color: $secondary_color;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+    .wishlist {
+        padding: 25px 8px;
+
+        .wishlist_card {
+            .wishlist_card_item {
+                width: 100%;
+                position: relative;
+
+                .heart {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    color: $secondary_color;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {}

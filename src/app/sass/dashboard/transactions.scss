@@ -1,0 +1,1225 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+.transactions {
+    .upper_area {
+        @include clearfix();
+        padding: 90px 30px 30px 30px;
+        position: relative;
+        border-bottom: 1px solid $border_color_2;
+
+        .left {
+            float: left;
+
+            h3 {
+                font-size: 36px;
+                line-height: 42px;
+                margin-bottom: 0;
+                color: $primary_text_color;
+                font-weight: 700;
+            }
+        }
+
+        .right {
+            float: right;
+            text-align: right;
+
+            .filter {
+                .dropdown {
+                    .dropdown-toggle {
+                        padding: 0;
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        color: $white;
+                        background-color: $primary_color;
+                        border-radius: 50%;
+                        font-size: 16px;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        padding: 0px;
+                        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+                        border-radius: 20px;
+                        border: none;
+                        transition: all 0.3s ease;
+                        min-width: 500px;
+                        display: block;
+                        opacity: 0;
+                        z-index: -10;
+
+                        &.show {
+                            z-index: 9999999;
+                            opacity: 1;
+                            padding: 20px;
+                        }
+
+                        .inner_form {
+                            .form_group {
+                                margin-bottom: 15px;
+
+                                .form-label {
+                                    font-size: 16px;
+                                    line-height: 22px;
+                                    font-weight: 500;
+                                    color: $label;
+                                    margin-bottom: 15px;
+                                }
+
+                                .input_field {
+                                    display: flex;
+                                    gap: 30px;
+
+                                    .form-control {
+                                        width: 100%;
+                                        outline: none;
+                                        border-radius: 15px;
+                                        border: none;
+                                        padding: 12px 25px;
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                        color: $label;
+                                        font-weight: 400;
+                                        background-color: $input_bg_color;
+                                    }
+                                }
+
+                                &.radios {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 15px;
+
+                                    .form-check {
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: 15px;
+                                        padding: 0;
+
+                                        .form-check-label {
+                                            font-size: 16px;
+                                            line-height: 22px;
+                                            font-weight: 500;
+                                            color: $label;
+                                        }
+
+                                        .form-check-input {
+                                            width: 16px;
+                                            height: 16px;
+                                            border-color: $input_bg_color;
+                                            background-color: $input_bg_color;
+                                            margin: 0;
+                                            vertical-align: unset;
+                                            transition: all 0.3s ease;
+                                            background-image: none;
+
+                                            &:focus {
+                                                box-shadow: none;
+                                            }
+
+                                            &:checked {
+                                                border-color: $secondary_color;
+                                                background-color: $secondary_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .btn_area {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .btn-primary {
+                                min-width: 150px;
+                                border-radius: 15px;
+                                padding: 10px 15px;
+                                background-color: $secondary_color;
+                                font-size: 14px;
+                                line-height: 22px;
+                                font-weight: 600;
+                                color: $white;
+
+                                &:hover {
+                                    background-color: $active_btn_hover_color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .lower_area {
+        padding: 30px 0;
+
+        .table_area {
+            .table-responsive {
+                width: 90%;
+                margin: 0 auto;
+
+                .table {
+                    border-spacing: 0 23px;
+                    border-collapse: separate;
+                    margin-bottom: 0;
+
+                    thead {
+
+                        tr {
+                            th {
+                                width: calc(100% / 5);
+                                background-color: $primary_color;
+                                padding: 20px 0;
+                                border: none;
+                                text-align: center;
+                                font-size: 16px;
+                                font-weight: 500;
+                                line-height: 20px;
+                                text-align: center;
+                                color: $white;
+
+                                span {
+                                    margin-right: 5px;
+                                }
+
+                                &:first-child {
+                                    border-radius: 15px 0 0 15px;
+                                }
+
+                                &:last-child {
+                                    border-radius: 0 15px 15px 0;
+                                }
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            td {
+                                border: none;
+                                font-size: 14px;
+                                font-weight: 500;
+                                background-color: $table_bg_td;
+                                text-align: center;
+                                padding: 20px 0;
+                                color: $label;
+                                line-height: 24px;
+                                width: calc(100% / 5);
+
+                                &.diactivate {
+                                    color: $diactivate;
+                                }
+
+                                &:first-child {
+                                    border-radius: 15px 0 0 15px;
+                                }
+
+                                &:last-child {
+                                    border-radius: 0 15px 15px 0;
+                                }
+
+                                &.action {
+                                    line-height: unset;
+
+                                    .dropdown {
+                                        .dropdown-toggle {
+                                            padding: 0;
+                                            text-align: center;
+                                            color: $label;
+                                            background-color: transparent;
+                                            font-size: 16px;
+                                            width: 20px;
+
+                                            &::after {
+                                                display: none;
+                                            }
+                                        }
+
+                                        .dropdown-menu {
+                                            padding: 0;
+                                            overflow: hidden;
+                                            border-radius: 10px 0 10px 10px;
+                                            border: none;
+                                            filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.16));
+                                            display: block;
+                                            opacity: 0;
+                                            z-index: -10;
+                                            transition: all 0.3s ease;
+
+                                            &.show {
+                                                z-index: 9999999;
+                                                opacity: 1;
+                                            }
+
+                                            ul {
+                                                background-color: $white;
+
+                                                li {
+                                                    border-bottom: 0.5px solid #d0c6c6;
+
+                                                    a {
+                                                        display: block;
+                                                        cursor: pointer;
+                                                        padding: 15px 20px;
+                                                        font-weight: 400;
+                                                        font-size: 14px;
+                                                        text-align: center;
+                                                        color: $primary_text_color;
+                                                    }
+
+                                                    &:last-child {
+                                                        border-bottom: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {}
+
+@media (min-width: 1300px) and (max-width: 1399px) {
+    .transactions {
+        .upper_area {
+            padding: 70px 30px 30px 30px;
+
+            .left {
+
+                h3 {
+                    font-size: 33px;
+                }
+            }
+
+            .right {
+
+                .filter {
+                    .dropdown {
+                        .dropdown-toggle {}
+
+                        .dropdown-menu {
+
+                            &.show {}
+
+                            .inner_form {
+                                .form_group {
+
+                                    .form-label {}
+
+                                    .input_field {
+
+                                        .form-control {}
+                                    }
+
+                                    &.radios {
+
+                                        .form-check {
+
+                                            .form-check-label {}
+
+                                            .form-check-input {}
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn_area {
+
+                                .btn-primary {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lower_area {
+
+            .table_area {
+                .table-responsive {
+
+                    .table {
+
+                        thead {
+
+                            tr {
+                                th {
+
+                                    span {}
+
+                                    &:first-child {
+                                        border-radius: 15px 0 0 15px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 15px 15px 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+
+                                td {
+
+                                    &.action {
+
+                                        .dropdown {
+                                            .dropdown-toggle {}
+
+                                            .dropdown-menu {
+
+                                                ul {
+
+                                                    li {
+                                                        a {}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .transactions {
+        .upper_area {
+            padding: 60px 25px 25px 25px;
+
+            .left {
+
+                h3 {
+                    font-size: 30px;
+                    line-height: 36px;
+                }
+            }
+
+            .right {
+
+                .filter {
+                    .dropdown {
+                        .dropdown-toggle {}
+
+                        .dropdown-menu {
+                            border-radius: 14px;
+                            min-width: 450px;
+
+                            &.show {
+                                padding: 15px;
+                            }
+
+                            .inner_form {
+                                .form_group {
+
+                                    .form-label {}
+
+                                    .input_field {
+                                        gap: 20px;
+
+                                        .form-control {
+                                            border-radius: 11px;
+                                            padding: 10px 20px;
+                                        }
+                                    }
+
+                                    &.radios {
+
+                                        .form-check {
+
+                                            .form-check-label {}
+
+                                            .form-check-input {}
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn_area {
+
+                                .btn-primary {
+                                    min-width: 130px;
+                                    border-radius: 11px;
+                                    padding: 8px 13px;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lower_area {
+            padding: 25px 0;
+
+            .table_area {
+                .table-responsive {
+                    width: 94%;
+
+                    .table {
+
+                        thead {
+
+                            tr {
+                                th {
+                                    padding: 15px 0;
+
+                                    span {}
+
+                                    &:first-child {
+                                        border-radius: 11px 0 0 11px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 11px 11px 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+
+                                td {
+                                    padding: 15px 0;
+
+                                    &.action {
+
+                                        .dropdown {
+                                            .dropdown-toggle {}
+
+                                            .dropdown-menu {
+
+                                                ul {
+
+                                                    li {
+                                                        a {
+                                                            padding: 13px 18px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:first-child {
+                                        border-radius: 11px 0 0 11px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 11px 11px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+    .transactions {
+        .upper_area {
+            padding: 50px 20px 20px 20px;
+
+            .left {
+
+                h3 {
+                    font-size: 27px;
+                    line-height: 33px;
+                }
+            }
+
+            .right {
+
+                .filter {
+                    .dropdown {
+                        .dropdown-toggle {
+                            width: 35px;
+                            height: 35px;
+                            line-height: 35px;
+                            font-size: 14px;
+                        }
+
+                        .dropdown-menu {
+                            border-radius: 14px;
+                            min-width: 400px;
+
+                            &.show {
+                                padding: 15px;
+                            }
+
+                            .inner_form {
+                                .form_group {
+                                    margin-bottom: 12px;
+
+                                    .form-label {
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .input_field {
+                                        gap: 15px;
+
+                                        .form-control {
+                                            border-radius: 9px;
+                                            padding: 7px 16px;
+                                            font-size: 14px;
+                                            line-height: 22px;
+                                        }
+                                    }
+
+                                    &.radios {
+
+                                        .form-check {
+
+                                            .form-check-label {
+                                                font-size: 14px;
+                                            }
+
+                                            .form-check-input {
+                                                width: 14px;
+                                                height: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn_area {
+
+                                .btn-primary {
+                                    min-width: 110px;
+                                    border-radius: 8px;
+                                    padding: 6px 11px;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lower_area {
+            padding: 20px 0;
+
+            .table_area {
+                .table-responsive {
+                    width: 94%;
+
+                    .table {
+                        border-spacing: 0 15px;
+
+                        thead {
+
+                            tr {
+                                th {
+                                    padding: 12px 0;
+                                    font-size: 14px;
+
+                                    span {}
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+
+                                td {
+                                    padding: 12px 0;
+                                    font-size: 13px;
+
+                                    &.action {
+
+                                        .dropdown {
+                                            .dropdown-toggle {}
+
+                                            .dropdown-menu {
+                                                min-width: 130px;
+                                                border-radius: 8px 0 8px 8px;
+
+                                                ul {
+
+                                                    li {
+                                                        a {
+                                                            padding: 11px 15px
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 1200 desktop only */
+// @media (min-width: 820px) and (max-width: 1000px) {} //// use it when u need it
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+    .transactions {
+        .upper_area {
+            padding: 15px 15px 15px 15px;
+
+            .left {
+
+                h3 {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+
+            .right {
+
+                .filter {
+                    .dropdown {
+                        .dropdown-toggle {
+                            width: 35px;
+                            height: 35px;
+                            line-height: 35px;
+                            font-size: 14px;
+                        }
+
+                        .dropdown-menu {
+                            border-radius: 8px;
+                            min-width: 350px;
+
+                            &.show {
+                                padding: 10px;
+                            }
+
+                            .inner_form {
+                                .form_group {
+                                    margin-bottom: 12px;
+
+                                    .form-label {
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .input_field {
+                                        gap: 15px;
+
+                                        .form-control {
+                                            border-radius: 9px;
+                                            padding: 7px 16px;
+                                            font-size: 14px;
+                                            line-height: 22px;
+                                        }
+                                    }
+
+                                    &.radios {
+
+                                        .form-check {
+
+                                            .form-check-label {
+                                                font-size: 14px;
+                                            }
+
+                                            .form-check-input {
+                                                width: 14px;
+                                                height: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn_area {
+
+                                .btn-primary {
+                                    min-width: 90px;
+                                    border-radius: 6px;
+                                    padding: 6px 11px;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lower_area {
+            padding: 15px 0;
+
+            .table_area {
+                .table-responsive {
+                    width: 94%;
+
+                    .table {
+                        border-spacing: 0 10px;
+
+                        thead {
+
+                            tr {
+                                th {
+                                    padding: 9px 0;
+                                    font-size: 14px;
+
+                                    span {}
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+
+                                td {
+                                    padding: 9px 0;
+                                    font-size: 13px;
+
+                                    &.action {
+
+                                        .dropdown {
+                                            .dropdown-toggle {}
+
+                                            .dropdown-menu {
+                                                min-width: 120px;
+                                                border-radius: 7px 0 7px 7px;
+
+                                                ul {
+
+                                                    li {
+                                                        a {
+                                                            padding: 8px 13px;
+                                                            font-size: 13px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Android portrait screen */
+@media (min-width: 375px) and (max-width: 667px) {}
+
+//// also this one
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+    .transactions {
+        .upper_area {
+            padding: 10px 10px 10px 10px;
+
+            .left {
+
+                h3 {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+
+            .right {
+
+                .filter {
+                    .dropdown {
+                        .dropdown-toggle {
+                            width: 35px;
+                            height: 35px;
+                            line-height: 35px;
+                            font-size: 14px;
+                        }
+
+                        .dropdown-menu {
+                            border-radius: 8px;
+                            min-width: 300px;
+
+                            &.show {
+                                padding: 10px;
+                            }
+
+                            .inner_form {
+                                .form_group {
+                                    margin-bottom: 12px;
+
+                                    .form-label {
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .input_field {
+                                        gap: 15px;
+
+                                        .form-control {
+                                            border-radius: 9px;
+                                            padding: 7px 16px;
+                                            font-size: 14px;
+                                            line-height: 22px;
+                                        }
+                                    }
+
+                                    &.radios {
+
+                                        .form-check {
+
+                                            .form-check-label {
+                                                font-size: 14px;
+                                            }
+
+                                            .form-check-input {
+                                                width: 14px;
+                                                height: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn_area {
+
+                                .btn-primary {
+                                    min-width: 80px;
+                                    border-radius: 6px;
+                                    padding: 4px 10px;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lower_area {
+            padding: 15px 0;
+
+            .table_area {
+                .table-responsive {
+                    width: 94%;
+
+                    .table {
+                        border-spacing: 0 10px;
+
+                        thead {
+
+                            tr {
+                                th {
+                                    padding: 9px 0;
+                                    font-size: 14px;
+                                    min-width: 100px;
+
+                                    span {}
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+
+                                td {
+                                    padding: 9px 0;
+                                    font-size: 13px;
+                                    min-width: 100px;
+
+                                    &.action {
+
+                                        .dropdown {
+                                            .dropdown-toggle {}
+
+                                            .dropdown-menu {
+                                                min-width: 120px;
+                                                border-radius: 7px 0 7px 7px;
+
+                                                ul {
+
+                                                    li {
+                                                        a {
+                                                            padding: 8px 13px;
+                                                            font-size: 13px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+    .transactions {
+        .upper_area {
+            padding: 10px 10px 10px 10px;
+
+            .left {
+
+                h3 {
+                    font-size: 16px;
+                    line-height: 25px;
+                }
+            }
+
+            .right {
+
+                .filter {
+                    .dropdown {
+                        .dropdown-toggle {
+                            width: 25px;
+                            height: 24px;
+                            line-height: 25px;
+                            font-size: 10px;
+                        }
+
+                        .dropdown-menu {
+                            border-radius: 8px;
+                            min-width: 250px;
+
+                            &.show {
+                                padding: 10px;
+                            }
+
+                            .inner_form {
+                                .form_group {
+                                    margin-bottom: 10px;
+
+                                    .form-label {
+                                        font-size: 13px;
+                                        line-height: 20px;
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .input_field {
+                                        gap: 10px;
+                                        flex-direction: column;
+
+                                        .form-control {
+                                            border-radius: 9px;
+                                            padding: 7px 16px;
+                                            font-size: 13px;
+                                            line-height: 20px;
+                                        }
+                                    }
+
+                                    &.radios {
+
+                                        .form-check {
+                                            gap: 10px;
+
+                                            .form-check-label {
+                                                font-size: 13px;
+                                            }
+
+                                            .form-check-input {
+                                                width: 12px;
+                                                height: 12px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn_area {
+
+                                .btn-primary {
+                                    min-width: 80px;
+                                    border-radius: 6px;
+                                    padding: 3px 10px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lower_area {
+            padding: 10px 0;
+
+            .table_area {
+                .table-responsive {
+                    width: 94%;
+
+                    .table {
+                        border-spacing: 0 8px;
+
+                        thead {
+
+                            tr {
+                                th {
+                                    padding: 9px 0;
+                                    font-size: 13px;
+                                    min-width: 100px;
+
+                                    span {}
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+
+                                td {
+                                    padding: 9px 0;
+                                    font-size: 12px;
+                                    min-width: 100px;
+
+                                    &.action {
+
+                                        .dropdown {
+                                            .dropdown-toggle {}
+
+                                            .dropdown-menu {
+                                                min-width: 120px;
+                                                border-radius: 7px 0 7px 7px;
+
+                                                ul {
+
+                                                    li {
+                                                        a {
+                                                            padding: 8px 13px;
+                                                            font-size: 12px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:first-child {
+                                        border-radius: 7px 0 0 7px;
+                                    }
+
+                                    &:last-child {
+                                        border-radius: 0 7px 7px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {}

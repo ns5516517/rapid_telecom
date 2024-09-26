@@ -63,7 +63,7 @@ const Page = () => {
                                         <div className="left">
                                             <div className="back">
                                                 <Breadcrumb>
-                                                    <Breadcrumb.Item href='/blogs' >
+                                                    <Breadcrumb.Item onClick={() => router.back()}>
                                                         <span><FontAwesomeIcon icon={faArrowLeft} /></span> Blogs
                                                     </Breadcrumb.Item>
                                                 </Breadcrumb>
