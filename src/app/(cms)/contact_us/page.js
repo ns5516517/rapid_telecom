@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Select from 'react-select'
+import { useRouter } from 'next/navigation';
 
 const Page = () => {
 
@@ -18,7 +19,7 @@ const Page = () => {
       src: <FontAwesomeIcon icon={faPhone} />, desc: '+123 456 789 0'
     },
     { src: <FontAwesomeIcon icon={faAt} />, desc: 'info@samplemail.com' }
-  ]
+  ];
 
   const [isMounted, setIsMounted] = useState(false);// just to remove a warning from react-select bcs the id on server and client isn't matched
 
@@ -28,19 +29,44 @@ const Page = () => {
     { src: <FontAwesomeIcon icon={faFacebookF} />, link: 'https://www.facebook.com/' },
     { src: <FontAwesomeIcon icon={faTwitter} />, link: 'https://x.com/?lang=en' },
     { src: <FontAwesomeIcon icon={faInstagram} />, link: 'https://www.instagram.com/' }
-  ]
+  ];
 
   const city = [
     { value: 'india', label: 'india' },
     { value: 'australia', label: 'australia' },
     { value: 'england', label: 'england' }
-  ]
+  ];
 
   const subject = [
-    { value: '1', label: 'telecom' },
-    { value: '2', label: 'lorem' },
-    { value: '3', label: 'lorem' }
-  ]
+    { value: 'telecom', label: 'telecom' },
+    { value: 'lorem', label: 'lorem' },
+    { value: 'lorem', label: 'lorem' }
+  ];
+
+  const [form_value, setForm_value] = useState({
+    fname: '',
+    lname: "",
+    email: '',
+    phone: '',
+    city: '',
+    zip: '',
+    subject: '',
+    message: ''
+  })
+  console.log(form_value)
+
+  const router = useRouter()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    sessionStorage.setItem('data',JSON.stringify(form_value))
+    const getData = sessionStorage.getItem('data')
+    const data = JSON.parse(getData)
+    console.log(data)
+    router.push(`/home?${getData}`)
+  }
+
+
 
   return (
     <>
@@ -87,60 +113,62 @@ const Page = () => {
                   </div>
                 </div>
                 <div className="right">
-                  <Form className='form'>
+                  <Form className='form' onSubmit={handleSubmit}>
                     <Row>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
                         <Form.Group className="form_field" controlId='fname'>
                           <Form.Label>First Name</Form.Label>
-                          <Form.Control type='text' placeholder='Enter your first name' />
+                          <Form.Control type='text' placeholder='Enter your first name' onChange={(e) => setForm_value({...form_value, fname: e.target.value })} />
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
                         <Form.Group className="form_field" controlId='lname'>
                           <Form.Label>Last Name</Form.Label>
-                          <Form.Control type='text' placeholder='Enter your last name' />
+                          <Form.Control type='text' placeholder='Enter your last name' onChange={(e) => setForm_value({...form_value, lname: e.target.value })}/>
                         </Form.Group>
                       </Col>
                       <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <Form.Group className="form_field" controlId='email' >
                           <Form.Label>Email</Form.Label>
-                          <Form.Control type='email' placeholder='Enter your email' autoComplete='email'/>
+                          <Form.Control type='email' placeholder='Enter your email' autoComplete='email' onChange={(e) => setForm_value({...form_value, email: e.target.value })}/>
                         </Form.Group>
                       </Col>
                       <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <Form.Group className="form_field" controlId='phone' >
                           <Form.Label>Phone number</Form.Label>
-                          <Form.Control type='tel' placeholder='Enter your phone no.' autoComplete='mobile tel-local'/>
+                          <Form.Control type='tel' placeholder='Enter your phone no.' autoComplete='mobile tel-local' onChange={(e) => setForm_value({...form_value, phone: e.target.value })}/>
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
                         <Form.Group className="form_field" >
                           <Form.Label>City</Form.Label>
                           {
-                            isMounted && 
-                          <Select className='form-control'
-                          classNamePrefix='select'
-                          options={city}
-                          placeholder='Enter City'
-                          />
-                        }
+                            isMounted &&
+                            <Select className='form-control'
+                              classNamePrefix='select'
+                              options={city}
+                              placeholder='Enter City'
+                              onChange={(e) => setForm_value({...form_value, city: e.value })}
+                            />
+                          }
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
                         <Form.Group className="form_field" controlId='zip'>
                           <Form.Label>ZIP Code</Form.Label>
-                          <Form.Control type='text' />
+                          <Form.Control type='text' onChange={(e) => setForm_value({...form_value, zip: e.target.value })}/>
                         </Form.Group>
                       </Col>
                       <Col xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <Form.Group className="form_field" > 
+                        <Form.Group className="form_field" >
                           <Form.Label>Subject</Form.Label>
                           {
                             isMounted &&
                             <Select className='form-control'
-                            classNamePrefix='select'
-                            options={subject}
-                            placeholder='Choose Subject'
+                              classNamePrefix='select'
+                              options={subject}
+                              placeholder='Choose Subject'
+                              onChange={(e) => setForm_value({...form_value, subject: e.value })}
                             />
                           }
                         </Form.Group>
@@ -148,7 +176,7 @@ const Page = () => {
                       <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <Form.Group className="form_field message" controlId='message'>
                           <Form.Label>Message</Form.Label>
-                          <Form.Control as='textarea' rows={7} placeholder='Write Your Message' />
+                          <Form.Control as='textarea' rows={7} placeholder='Write Your Message' onChange={(e) => setForm_value({...form_value, message: e.target.value })}/>
                         </Form.Group>
                       </Col>
                     </Row>

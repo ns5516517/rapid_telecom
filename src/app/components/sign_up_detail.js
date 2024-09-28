@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 
 const Sign_up_detail = (props) => {
+
     return (
         <>
             <h3>Enter your detail</h3>

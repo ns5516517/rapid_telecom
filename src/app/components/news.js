@@ -20,8 +20,8 @@ const News = () => {
                                 </div>
                                 <div className="form_area">
                                     <Form onSubmit={(e) => e.preventDefault()}>
-                                        <Form.Group className='form-group'>
-                                            <Form.Control type='email' placeholder='Enter Email' />
+                                        <Form.Group className='form-group' controlId='email'>
+                                            <Form.Control type='email' placeholder='Enter Email' autoComplete='email' />
                                             <div className="form_btn">
                                                 <Button type='submit' className='btn-primary register_btn' onClick={() => router.push('/sign_up')} >Register</Button>
                                             </div>

@@ -22,10 +22,10 @@
         }
     }
 
-    &.contact_us{
-        .parent_contact_us{
-            .title{
-                h3{
+    &.contact_us {
+        .parent_contact_us {
+            .title {
+                h3 {
                     margin-bottom: 0;
                 }
             }
@@ -193,12 +193,22 @@
                                     color: $label;
                                 }
 
-                                p {
-                                    font-size: 14px;
-                                    line-height: 25px;
-                                    margin-bottom: 20px;
-                                    font-weight: 500;
-                                    color: $label;
+                                .detail {
+                                    p {
+                                        font-size: 14px;
+                                        line-height: 25px;
+                                        margin-bottom: 20px;
+                                        font-weight: 500;
+                                        color: $label;
+
+                                        a {
+                                            display: inline-block;
+                                            font-size: 16px;
+                                            line-height: 25px;
+                                            font-weight: 500;
+                                            color: $primary_text_color;
+                                        }
+                                    }
                                 }
 
                                 .link {
@@ -218,8 +228,8 @@
                                         left: -10px;
                                         opacity: 0;
                                         transition: all 0.3s ease;
-                                    }
 
+                                    }
                                 }
                             }
 
@@ -486,9 +496,13 @@
                                         margin-bottom: 15px;
                                     }
 
-                                    p {
-                                        line-height: 24px;
-                                        margin-bottom: 15px;
+                                    .detail {
+                                        p {
+                                            line-height: 24px;
+                                            margin-bottom: 15px;
+
+                                            a {}
+                                        }
                                     }
 
                                     .link {
@@ -566,6 +580,7 @@
             padding: 60px 0 0 0;
             margin: 0;
         }
+
         .parent_blogs_slider {
 
             .title {
@@ -624,9 +639,13 @@
                                         font-size: 17px;
                                     }
 
-                                    p {
-                                        line-height: 22px;
-                                        margin-bottom: 13px;
+                                    .detail {
+                                        p {
+                                            line-height: 22px;
+                                            margin-bottom: 13px;
+
+                                            a {}
+                                        }
                                     }
 
                                     .link {
@@ -795,9 +814,15 @@
                                         font-size: 17px;
                                     }
 
-                                    p {
-                                        line-height: 22px;
-                                        margin-bottom: 13px;
+                                    .detail {
+                                        p {
+                                            line-height: 22px;
+                                            margin-bottom: 13px;
+
+                                            a {
+                                                font-size: 15px;
+                                            }
+                                        }
                                     }
 
                                     .link {
@@ -989,10 +1014,16 @@
                                         font-size: 15px;
                                     }
 
-                                    p {
-                                        line-height: 20px;
-                                        margin-bottom: 9px;
-                                        font-size: 13px;
+                                    .detail {
+                                        p {
+                                            line-height: 20px;
+                                            margin-bottom: 9px;
+                                            font-size: 13px;
+
+                                            a {
+                                                font-size: 14px;
+                                            }
+                                        }
                                     }
 
                                     .link {
@@ -1191,10 +1222,16 @@
                                         font-size: 15px;
                                     }
 
-                                    p {
-                                        line-height: 20px;
-                                        margin-bottom: 9px;
-                                        font-size: 13px;
+                                    .detail {
+                                        p {
+                                            line-height: 20px;
+                                            margin-bottom: 9px;
+                                            font-size: 13px;
+
+                                            a {
+                                                font-size: 13px;
+                                            }
+                                        }
                                     }
 
                                     .link {
@@ -1407,10 +1444,16 @@
                                         font-size: 14px;
                                     }
 
-                                    p {
-                                        line-height: 19px;
-                                        margin-bottom: 8px;
-                                        font-size: 13px;
+                                    .detail {
+                                        p {
+                                            line-height: 19px;
+                                            margin-bottom: 8px;
+                                            font-size: 13px;
+
+                                            a {
+                                                font-size: 13px;
+                                            }
+                                        }
                                     }
 
                                     .link {
@@ -1623,10 +1666,16 @@
                                         font-size: 14px;
                                     }
 
-                                    p {
-                                        line-height: 19px;
-                                        margin-bottom: 8px;
-                                        font-size: 13px;
+                                    .detail {
+                                        p {
+                                            line-height: 19px;
+                                            margin-bottom: 8px;
+                                            font-size: 13px;
+
+                                            a {
+                                                font-size: 13px;
+                                            }
+                                        }
                                     }
 
                                     .link {

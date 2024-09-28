@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Blog_card from './blog_card';
 import blog_2 from '../images/blog_2.png';
@@ -6,13 +6,26 @@ import blog_3 from '../images/blog_1.png';
 import blog_4 from '../images/blog_4.png';
 import '../sass/pages/related.scss';
 import Title from './title';
+import axios from 'axios';
 
 const Related_posts = () => {
-    const blog_data = [
-        { src: blog_2, blog_date: 'November 18, 2021', blog_title: 'Lorem ipsum dolor sit amet consectetur.', blog_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque rem repellat libero aperiam molestiae magni.', manages: false },
-        { src: blog_3, blog_date: 'November 18, 2021', blog_title: 'Lorem ipsum dolor sit amet consectetur.', blog_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque rem repellat libero aperiam molestiae magni.', manages: false },
-        { src: blog_4, blog_date: 'November 18, 2021', blog_title: 'Lorem ipsum dolor sit amet consectetur.', blog_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque rem repellat libero aperiam molestiae magni.', manages: false }
-    ]
+    const [related, setRelated] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const res = await axios.get("http://192.168.1.43:8000/blogs");
+                if (res.status) {
+                    const data = res.data.data.rows;
+                    setRelated(data);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getData();
+    }, []);
+
     return (
         <>
             <section className="related">
@@ -23,8 +36,8 @@ const Related_posts = () => {
                                 <Title title={'Related Posts'} />
                                 <div className="cards">
                                     {
-                                        blog_data.map((item, index) => (
-                                            <Blog_card src={item.src} manage_item={item.manages} desc={item.blog_desc} date={item.blog_date} title={item.blog_title} toggle={(index) => toggle(index)} index={index} key={index} />
+                                        related.map((item, index) => (
+                                            <Blog_card src={item.src} desc={item.description} date={item.created_at} title={item.title} key={item.id} />
                                         ))
                                     }
                                 </div>

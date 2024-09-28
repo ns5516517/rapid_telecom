@@ -40,12 +40,23 @@
             color: $label;
         }
 
-        p {
-            font-size: 14px;
-            line-height: 25px;
-            margin-bottom: 20px;
-            font-weight: 500;
-            color: $label;
+        .detail {
+            p {
+                font-size: 14px;
+                line-height: 25px;
+                margin-bottom: 20px;
+                font-weight: 500;
+                color: $label;
+
+                a {
+                    display: inline-block;
+                    align-items: center;
+                    font-size: 16px;
+                    line-height: 25px;
+                    font-weight: 500;
+                    color: $primary_text_color;
+                }
+            }
         }
 
         .link {
@@ -117,9 +128,14 @@
                 margin-bottom: 15px;
             }
 
-            p {
-                line-height: 24px;
-                margin-bottom: 15px;
+            .detail {
+                p {
+                    line-height: 24px;
+                    margin-bottom: 15px;
+                    a{
+                        font-size: 15px;
+                    }
+                }
             }
         }
     }
@@ -148,10 +164,14 @@
                 margin-bottom: 13px;
                 font-size: 17px;
             }
-
-            p {
-                line-height: 22px;
-                margin-bottom: 13px;
+            .detail{
+                p {
+                    line-height: 22px;
+                    margin-bottom: 13px;
+                    a{
+                        font-size: 15px;
+                    }
+                }
             }
 
             .link {
@@ -188,10 +208,14 @@
                 margin-bottom: 13px;
                 font-size: 17px;
             }
-
-            p {
-                line-height: 22px;
-                margin-bottom: 13px;
+            .detail{
+                p {
+                    line-height: 22px;
+                    margin-bottom: 13px;
+                    a{
+                        font-size: 14px;
+                    }
+                }
             }
 
             .link {
@@ -228,11 +252,15 @@
                 margin-bottom: 9px;
                 font-size: 15px;
             }
-
-            p {
-                line-height: 20px;
-                margin-bottom: 9px;
-                font-size: 13px;
+            .detail{
+                p {
+                    line-height: 20px;
+                    margin-bottom: 9px;
+                    font-size: 13px;
+                    a{
+                        font-size: 14px;
+                    }
+                }
             }
 
             .link {
@@ -248,7 +276,9 @@
             }
         }
     }
-} //// use it when u need it
+}
+
+//// use it when u need it
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 576px) and (max-width: 767px) {
@@ -274,11 +304,15 @@
                 margin-bottom: 9px;
                 font-size: 15px;
             }
-
-            p {
-                line-height: 20px;
-                margin-bottom: 9px;
-                font-size: 13px;
+            .detail{
+                p {
+                    line-height: 20px;
+                    margin-bottom: 9px;
+                    font-size: 13px;
+                    a{
+                        font-size: 14px;
+                    }
+                }
             }
 
             .link {
@@ -347,7 +381,7 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 361px) and (max-width: 575px) {
-    
+
     .card_item {
         border-radius: 10px;
         width: 100%;
@@ -371,11 +405,15 @@
                 margin-bottom: 7px;
                 font-size: 14px;
             }
-
-            p {
-                line-height: 19px;
-                margin-bottom: 8px;
-                font-size: 13px;
+            .detail{
+                p {
+                    line-height: 19px;
+                    margin-bottom: 8px;
+                    font-size: 13px;
+                    a{
+                        font-size: 13px;
+                    }
+                }
             }
 
             .link {
@@ -417,12 +455,16 @@
                 line-height: 18px;
                 margin-bottom: 7px;
                 font-size: 14px;
-            }
-
-            p {
-                line-height: 19px;
-                margin-bottom: 8px;
-                font-size: 13px;
+            }   
+            .detail{
+                p {
+                    line-height: 19px;
+                    margin-bottom: 8px;
+                    font-size: 13px;
+                    a{
+                        font-size: 13px;
+                    }
+                }
             }
 
             .link {

@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import blog_1 from '../images/blog_3.png';
-import blog_2 from '../images/blog_2.png';
-import blog_3 from '../images/blog_1.png';
-import blog_4 from '../images/blog_4.png';
+import axios from 'axios';
 import Blog_card from './blog_card';
 import 'swiper/css/navigation';
 import 'swiper/css';
@@ -16,20 +13,31 @@ import '../sass/pages/blogs_slider.scss';
 
 const Blogs_Slider = () => {
 
-    const [blog_slider_data, setBlog_slider_data] = useState([
-        { src: blog_1, blog_date: 'November 18, 2021', blog_title: 'Lorem ipsum dolor sit amet consectetur.', blog_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque rem repellat libero aperiam molestiae magni.', manages: false },
-        { src: blog_2, blog_date: 'November 18, 2021', blog_title: 'Lorem ipsum dolor sit amet consectetur.', blog_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque rem repellat libero aperiam molestiae magni.', manages: false },
-        { src: blog_3, blog_date: 'November 18, 2021', blog_title: 'Lorem ipsum dolor sit amet consectetur.', blog_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque rem repellat libero aperiam molestiae magni.', manages: false },
-        { src: blog_4, blog_date: 'November 18, 2021', blog_title: 'Lorem ipsum dolor sit amet consectetur.', blog_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque rem repellat libero aperiam molestiae magni.', manages: false }
-    ])
+    const [blog_slider_data, setBlog_slider_data] = useState([])
 
 
-    function toggle(index) {
-        let tempVal = [...blog_slider_data]
-        tempVal[index] = { ...tempVal[index], manages: tempVal[index].manages == false ? true : false }
-        // console.log("================",tempVal[index].manages)
-        setBlog_slider_data(tempVal)
-    }
+    // function toggle(index) {
+    //     let tempVal = [...blog_slider_data]
+    //     tempVal[index] = { ...tempVal[index], manages: tempVal[index].manages == false ? true : false }
+    //     // console.log("================",tempVal[index].manages)
+    //     setBlog_slider_data(tempVal)
+    // }
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const res = await axios.get('http://192.168.1.43:8000/blogs')
+                console.log(res.status)
+                if (res.status) {
+                    const data = res.data.data.rows
+                    setBlog_slider_data(data)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getData()
+    }, [])
 
     return (
         <>
@@ -53,34 +61,34 @@ const Blogs_Slider = () => {
                                             prevEl: '.prev'
                                         }}
                                         breakpoints={{
-                                            1366:{
-                                                spaceBetween:20
+                                            1366: {
+                                                spaceBetween: 20
                                             },
-                                            768:{
+                                            768: {
                                                 slidesPerView: 2
                                             },
-                                            576:{
+                                            576: {
                                                 slidesPerView: 2
                                             },
-                                            932:{
-                                                slidesPerView:3,
+                                            932: {
+                                                slidesPerView: 3,
                                                 spaceBetween: 12
                                             },
-                                            361:{
-                                                slidesPerView:1,
-                                                spaceBetween:10
+                                            361: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 10
                                             },
-                                            320:{
-                                                slidesPerView:1,
-                                                spaceBetween:10
+                                            320: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 10
                                             }
                                         }}
                                         className='mySwiper1'
                                     >
                                         {
                                             blog_slider_data.map((item, index) => (
-                                                <SwiperSlide key={index}>
-                                                   <Blog_card src={item.src} manage_item={item.manages} desc={item.blog_desc} date={item.blog_date} title={item.blog_title} toggle={(index) => toggle(index)} index={index}/>
+                                                <SwiperSlide key={item.id}>
+                                                    <Blog_card src={item.src}  desc={item.description} date={item.created_at} title={item.title} />
                                                 </SwiperSlide>
                                             ))
                                         }

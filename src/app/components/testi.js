@@ -1,6 +1,6 @@
 import { faChevronLeft, faChevronRight, faQuoteRight, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -9,17 +9,27 @@ import 'swiper/css';
 import Image from 'next/image';
 import testi_1 from '../images/testminial3.png';
 import '../sass/pages/testi.scss';
+import axios from 'axios';
 
 const Testi = () => {
 
-    const testiData = [
-        { star: <FontAwesomeIcon icon={faStar} />, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis libero elit, at rhoncus neque dignissim ac. Morbi suscipit nisl magna. Aliquam hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit nisl magna. Aliquam hendrerit.', src: testi_1, name: 'JANE COOPER', desig: 'Lorem, ipsum.' },
-        { star: <FontAwesomeIcon icon={faStar} />, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis libero elit, at rhoncus neque dignissim ac. Morbi suscipit nisl magna. Aliquam hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit nisl magna. Aliquam hendrerit.', src: testi_1, name: 'JANE COOPER', desig: 'Lorem, ipsum.' },
-        { star: <FontAwesomeIcon icon={faStar} />, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis libero elit, at rhoncus neque dignissim ac. Morbi suscipit nisl magna. Aliquam hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit nisl magna. Aliquam hendrerit.', src: testi_1, name: 'JANE COOPER', desig: 'Lorem, ipsum.' },
-        { star: <FontAwesomeIcon icon={faStar} />, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis libero elit, at rhoncus neque dignissim ac. Morbi suscipit nisl magna. Aliquam hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit nisl magna. Aliquam hendrerit.', src: testi_1, name: 'JANE COOPER', desig: 'Lorem, ipsum.' },
-        { star: <FontAwesomeIcon icon={faStar} />, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis libero elit, at rhoncus neque dignissim ac. Morbi suscipit nisl magna. Aliquam hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit nisl magna. Aliquam hendrerit.', src: testi_1, name: 'JANE COOPER', desig: 'Lorem, ipsum.' },
-        { star: <FontAwesomeIcon icon={faStar} />, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis libero elit, at rhoncus neque dignissim ac. Morbi suscipit nisl magna. Aliquam hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit nisl magna. Aliquam hendrerit.', src: testi_1, name: 'JANE COOPER', desig: 'Lorem, ipsum.' }
-    ]
+    const [testiData, setTestiData] = useState([])
+
+    useEffect(() => {
+        const get_data = async () => {
+            try {
+                const res = await axios.get('http://192.168.1.22:4001/admin/testimonial')
+                console.log(res.data.status)
+                if (res.data.status) {
+                    setTestiData(res.data.data)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        get_data()
+    }, [])
+
     return (
         <>
             <section className="testi">
@@ -42,33 +52,33 @@ const Testi = () => {
                                             prevEl: '.prev_testi'
                                         }}
                                         breakpoints={{
-                                            1366:{
-                                                spaceBetween:20
+                                            1366: {
+                                                spaceBetween: 20
                                             },
-                                            768:{
+                                            768: {
                                                 slidesPerView: 1
                                             },
-                                            576:{
+                                            576: {
                                                 slidesPerView: 1
                                             },
-                                            932:{
-                                                slidesPerView:1,
+                                            932: {
+                                                slidesPerView: 1,
                                                 spaceBetween: 12
                                             },
-                                            361:{
-                                                slidesPerView:1,
-                                                spaceBetween:10
+                                            361: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 10
                                             },
-                                            320:{
-                                                slidesPerView:1,
-                                                spaceBetween:10
+                                            320: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 10
                                             }
                                         }}
                                         className='mySwiper2'
                                     >
                                         {
                                             testiData.map((item, index) => (
-                                                <SwiperSlide key={index}>
+                                                <SwiperSlide key={item._id}>
                                                     <div className="swiper_testimonial">
                                                         <div className="upper">
                                                             <ul className="ratings">
@@ -78,15 +88,15 @@ const Testi = () => {
                                                                     ))
                                                                 }
                                                             </ul>
-                                                            <p>{item.desc} </p>
+                                                            <p>{item.description} </p>
                                                         </div>
                                                         <div className="lower">
                                                             <div className="quotes"><FontAwesomeIcon icon={faQuoteRight} /></div>
                                                             <div className="testi_image">
-                                                                <Image src={item.src} alt='testi_1' title='...' priority={false} loading='lazy' />
+                                                                <Image src={testi_1} alt='testi_1' title='...' priority={false} loading='lazy' />
                                                             </div>
-                                                            <div className="testi_name">{item.name}</div>
-                                                            <div className="testi_desc">{item.desig}</div>
+                                                            <div className="testi_name">{item.title}</div>
+                                                            <div className="testi_desc">{item.desig ? item.desig : 'Lorem Ipsum'}</div>
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
