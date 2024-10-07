@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import '../sass/pages/blogs_slider.scss';
-import user from '../images/reviewer_img1.png';
-import Title from '../components/title';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import { Col, Container, Row } from 'react-bootstrap';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Title from '../components/title';
+import user from '../images/reviewer_img1.png';
+import '../sass/pages/blogs_slider.scss';
 
 
 const Page = () => {
@@ -104,4 +104,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default Page;
