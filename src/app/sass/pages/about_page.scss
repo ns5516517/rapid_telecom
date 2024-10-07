@@ -1,26 +1,16 @@
 @import "../base/variable.scss";
 @import "../base/mixins.scss";
 
-
-// .about_page {
-//     padding: 90px 0 0 0;
-//     // margin: 0;
-
-//     .parent_about_page {
-//         .title {
-//             h3 {
-//                 margin-bottom: 0;
-//             }
-//         }
-//     }
-// }
-
 .about_section {
     .inner_about_section {
         .left {
             position: relative;
             width: 80%;
             padding-top: 55px;
+            animation: left-up;
+            animation-timing-function: linear;
+            animation-range: 0vh 50vh;
+            animation-timeline: view();
 
             .rectangle {
                 position: absolute;
@@ -52,6 +42,11 @@
         }
 
         .right {
+            animation: right-up;
+            animation-timing-function: linear;
+            animation-range: 0vh 40vh;
+            animation-timeline: view();
+
             .small_text {
                 font-size: 18px;
                 line-height: 24px;
@@ -155,6 +150,10 @@
 
         .parent_join {
             .left_join {
+                animation: left-up;
+                animation-timing-function: linear;
+                animation-range: 0vh 40vh;
+                animation-timeline: view();
                 .join_image {
                     height: 372px;
                     overflow: hidden;
@@ -173,6 +172,25 @@
                 }
             }
         }
+    }
+}
+
+@keyframes left-up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes right-up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
     }
 }
 
@@ -621,9 +639,7 @@
 }
 
 /* Android portrait screen */
-@media (min-width: 375px) and (max-width: 667px) {
-    
-}
+@media (min-width: 375px) and (max-width: 667px) {}
 
 //// also this one
 

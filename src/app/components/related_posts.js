@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Blog_card from './blog_card';
-import blog_2 from '../images/blog_2.png';
-import blog_3 from '../images/blog_1.png';
-import blog_4 from '../images/blog_4.png';
-import '../sass/pages/related.scss';
 import Title from './title';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as freesolidsvg from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import '../sass/pages/related.scss';
 
 const Related_posts = () => {
     const [related, setRelated] = useState([]);
@@ -20,7 +20,7 @@ const Related_posts = () => {
                     setRelated(data);
                 }
             } catch (error) {
-                console.log(error);
+                console.log(error.message);
             }
         };
         getData();
@@ -36,9 +36,21 @@ const Related_posts = () => {
                                 <Title title={'Related Posts'} />
                                 <div className="cards">
                                     {
-                                        related.map((item, index) => (
-                                            <Blog_card src={item.src} desc={item.description} date={item.created_at} title={item.title} key={item.id} />
-                                        ))
+                                        related.map((item, index) => {
+                                            if (index < 3) {
+                                                return <Blog_card
+                                                    src={item.image}
+                                                    desc={item.description}
+                                                    date={item.created_at}
+                                                    title={item.title}
+                                                    id={item.id}
+                                                    key={index}
+                                                    index={index}
+                                                    heart={<FontAwesomeIcon icon={freesolidsvg.faHeart} />}
+                                                    regular_heart={<FontAwesomeIcon icon={faHeart} />}
+                                                />
+                                            }
+                                        })
                                     }
                                 </div>
                             </div>

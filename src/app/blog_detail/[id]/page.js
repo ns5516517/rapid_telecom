@@ -1,15 +1,15 @@
 "use client";
 import axios from "axios";
 import Image from "next/image";
-import Title from "../components/title";
-import "../sass/pages/blog_detail.scss";
+import Title from "../../components/title";
+import "../../sass/pages/blog_detail.scss";
 import Modal from "react-bootstrap/Modal";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
-import blog_detail from "../images/blog_detail.png";
+import blog_detail from "../../images/blog_detail.png";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Related_posts from "../components/related_posts";
+import Related_posts from "../../components/related_posts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Form, Row, Table } from "react-bootstrap";
 import { faArrowLeft, faStar, faXmark, } from "@fortawesome/free-solid-svg-icons";
@@ -18,23 +18,26 @@ const Page = () => {
     const router = useRouter();
     const [show, setShow] = useState(false);
     const [active, setActive] = useState(-1);
-    const [detail, setDetail] = useState('');
+    const [detail, setDetail] = useState({});
     const [new_post_data, setNewPostData] = useState([]);
+
+    const {id} = useParams()
 
     useEffect(() => {
         const get_data = async () => {
             try {
-                const res = await axios.get("http://192.168.1.43:8000/blogs/view/8");
+                const res = await axios.get(`http://192.168.1.43:8000/blogs/view/${id}`);
                 if (res.data.status) {
                     const extract_data = res.data.data;
                     setDetail(extract_data)
                 }
+                
             } catch (error) {
-                console.log(error);
+                console.log(error.message);
             }
         };
         get_data();
-    }, []);
+    }, [id]);
     
     useEffect(() => {
         const get_data = async () => {
@@ -43,10 +46,9 @@ const Page = () => {
                 if (res.data.status) {
                     const extract_data = res.data.data.rows;
                     setNewPostData(extract_data)
-                    console.log(extract_data)
                 }
             } catch (error) {
-                console.log(error);
+                console.log(error.message);
             }
         };
         get_data();
@@ -78,9 +80,9 @@ const Page = () => {
                                                 </Breadcrumb>
                                             </div>
                                             <h3>
-                                                {detail.title}
+                                                {detail.title ? detail.title : "Loading..."}
                                             </h3>
-                                            <div className="date">{new Date(detail.created_at).toDateString()}</div>
+                                            <div className="date">{detail.created_at ? new Date(detail.created_at).toDateString() : ''}</div>
                                             <div className="blog_image">
                                                 <Image
                                                     src={blog_detail}

@@ -19,12 +19,11 @@ const Testi = () => {
         const get_data = async () => {
             try {
                 const res = await axios.get('http://192.168.1.22:4001/admin/testimonial')
-                console.log(res.data.status)
                 if (res.data.status) {
                     setTestiData(res.data.data)
                 }
             } catch (error) {
-                console.log(error)
+                console.log(error.message)
             }
         }
         get_data()

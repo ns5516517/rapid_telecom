@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import * as freesolidsvg from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import axios from 'axios';
@@ -10,6 +10,8 @@ import Blog_card from './blog_card';
 import 'swiper/css/navigation';
 import 'swiper/css';
 import '../sass/pages/blogs_slider.scss';
+import Title from './title';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 const Blogs_Slider = () => {
 
@@ -26,8 +28,7 @@ const Blogs_Slider = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await axios.get('http://192.168.1.43:8000/blogs')
-                console.log(res.status)
+                const res = await axios.get("http://192.168.1.43:8000/blogs");
                 if (res.status) {
                     const data = res.data.data.rows
                     setBlog_slider_data(data)
@@ -46,10 +47,7 @@ const Blogs_Slider = () => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className="parent_blogs_slider">
-                                <div className="title">
-                                    <h3>Blogs</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</p>
-                                </div>
+                                <Title title={'Blogs'} desc={'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis'} />
                                 <div className="blog_swiper_parent">
                                     <Swiper
                                         modules={[Navigation]}
@@ -88,14 +86,24 @@ const Blogs_Slider = () => {
                                         {
                                             blog_slider_data.map((item, index) => (
                                                 <SwiperSlide key={item.id}>
-                                                    <Blog_card src={item.src}  desc={item.description} date={item.created_at} title={item.title} />
+                                                    <Blog_card
+                                                       src={item.image}
+                                                       desc={item.description}
+                                                       date={item.created_at}
+                                                       title={item.title}
+                                                       id={item.id}
+                                                       key={index}
+                                                       index={index}
+                                                       heart={<FontAwesomeIcon icon={freesolidsvg.faHeart} />}
+                                                       regular_heart={<FontAwesomeIcon icon={faHeart} />}
+                                                    />
                                                 </SwiperSlide>
                                             ))
                                         }
                                     </Swiper>
                                     <div className="ltr">
-                                        <div className="prev same "><FontAwesomeIcon icon={faChevronLeft} /></div>
-                                        <div className="next same "><FontAwesomeIcon icon={faChevronRight} /></div>
+                                        <div className="prev same "><FontAwesomeIcon icon={freesolidsvg.faChevronLeft} /></div>
+                                        <div className="next same "><FontAwesomeIcon icon={freesolidsvg.faChevronRight} /></div>
                                     </div>
                                 </div>
                                 <div className="view_all">

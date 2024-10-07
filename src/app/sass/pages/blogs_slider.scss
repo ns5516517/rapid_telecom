@@ -3,6 +3,10 @@
 
 .blogs_slider {
     margin-bottom: 90px;
+    @include scale_animation(opacity);
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: 0vh 70vh;
 
     &.all_blogs {
         margin: 0;
@@ -161,6 +165,18 @@
                             cursor: grab;
                             user-select: none;
                             width: 100%;
+
+                            .heart {
+                                position: absolute;
+                                top: 15px;
+                                right: 15px;
+                                font-size: 22px;
+                                color: indianred;
+                                width: 25px;
+                                height: 25px;
+                                text-align: center;
+                                cursor: pointer;
+                            }
 
                             .blog_image {
                                 height: 300px;

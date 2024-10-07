@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Dropdown, Form, Table } from 'react-bootstrap';
 import { faEllipsisVertical, faFilter, faSort } from '@fortawesome/free-solid-svg-icons';
-import '../../sass/dashboard/transactions.scss';
+import '../../../sass/dashboard/transactions.scss';
 import Link from 'next/link';
 
 const Page = () => {

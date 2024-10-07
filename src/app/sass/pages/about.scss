@@ -7,6 +7,10 @@
     padding: 90px 0;
     position: relative;
     margin-bottom: 90px;
+    @include scale_animation(scale);
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: 0vh 70vh;
 
     &::before {
         content: "";
@@ -24,6 +28,7 @@
             width: 958px;
             float: left;
             max-width: 100%;
+
             .play {
                 position: absolute;
                 left: 50%;
@@ -60,6 +65,7 @@
             z-index: 1;
             bottom: 0;
             max-width: 100%;
+
             .content_area {
                 margin-top: 320px;
                 padding: 30px 60px 40px 30px;
@@ -344,7 +350,9 @@
             }
         }
     }
-} //// use it when u need it
+}
+
+//// use it when u need it
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 576px) and (max-width: 767px) {
@@ -375,11 +383,12 @@
 
             .right {
                 width: 100%;
+
                 .content_area {
                     margin-top: 20px;
                     padding: 15px 25px;
                     border-radius: 6px;
-                    margin-left: 0;            
+                    margin-left: 0;
 
                     h3 {
                         margin-bottom: 7px;
@@ -436,11 +445,12 @@
 
             .right {
                 width: 100%;
+
                 .content_area {
                     margin-top: 15px;
                     padding: 10px 20px;
                     border-radius: 6px;
-                    margin-left: 0;            
+                    margin-left: 0;
 
                     h3 {
                         margin-bottom: 7px;
@@ -494,11 +504,12 @@
 
             .right {
                 width: 100%;
+
                 .content_area {
                     margin-top: 15px;
                     padding: 10px 20px;
                     border-radius: 6px;
-                    margin-left: 0;            
+                    margin-left: 0;
 
                     h3 {
                         margin-bottom: 7px;

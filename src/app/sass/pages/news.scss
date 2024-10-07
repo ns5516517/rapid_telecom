@@ -5,6 +5,10 @@
     background-color: $primary_color;
     border-bottom: 1px solid $white;
     padding: 90px 0;
+    @include scale_animation(opacity);
+    animation-timing-function: linear; 
+    animation-timeline: view();
+    animation-range: 0vh 40vh;
     .parent_news {
         .title {
             text-align: center;

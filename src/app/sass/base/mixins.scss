@@ -124,6 +124,25 @@ $browser-context: 16;
     align-items: flex-start;
 }
 
+//opacity animation
+@mixin opacity_animation($opacity) {
+    animation: $opacity ;
+}
+@keyframes opacity {
+    from{
+        opacity: 0;
+    }
+}
+//scale animation
+@mixin scale_animation($scale) {
+    animation: $scale ;
+}
+@keyframes scale {
+    from{
+        scale: 0.5;
+    }
+}
+
 // Slide Animation
 @mixin slide_animation($slide) {
     -webkit-animation: $slide;

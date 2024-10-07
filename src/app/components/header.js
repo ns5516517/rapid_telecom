@@ -6,11 +6,25 @@ import logo from '../images/logo.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import '../sass/pages/header.scss';
-import { faArrowRightFromBracket, faBars, faGear, faHouse, faX } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import goku from '@/app/images/goku.jpg';
+import { animate, motion, stagger } from 'framer-motion';
 
 const Header = () => {
+
+    const listItemVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+    };
+
+    const sequence = [
+        [".mobile_animate", { opacity: 1 }, { duration: 0.5 }],
+        [".mobile_animate_list", { x: ['-100%', 0] }, { delay: stagger(0.1) }]
+    ]
+
+    animate(sequence, { duration: 1 })
+
+    // animate(".webNav", { opacity: 1 }, { delay: stagger(0.1) })
 
     const [toggle, setToggle] = useState(false)
 
@@ -64,45 +78,63 @@ const Header = () => {
                             <div className="parent_header">
                                 <div className="header_left">
                                     <div className="inner_left">
-                                        <div className="logo">
+                                        <motion.div className="logo"
+                                            variants={listItemVariants}
+                                            initial={'hidden'}
+                                            animate={'visible'}
+                                            transition={{ delay: 0.1 }}
+                                        >
                                             <Image src={logo} alt='logo' title='...' priority={true} loading='eager' />
-                                        </div>
+                                        </motion.div>
                                     </div>
                                     <div className="inner_right">
-                                        <ul>
+                                        <motion.ul>
                                             {
                                                 Links.map((item, index) => {
                                                     if (index < 4) {
-                                                        return <li key={index}>
+                                                        return <motion.li
+                                                            key={index}
+                                                            className='webNav'
+                                                            initial={'hidden'}
+                                                            animate={'visible'}
+                                                            variants={listItemVariants}
+                                                            transition={{ delay: index * 0.1 }}
+                                                        >
                                                             <Link href={item.link}
                                                                 className={`link ${pathname === item.link ? 'active' : ''}`}
                                                                 prefetch
                                                             >
                                                                 {item.name}
                                                             </Link>
-                                                        </li>
+                                                        </motion.li>
                                                     }
                                                 })
                                             }
-                                        </ul>
+                                        </motion.ul>
                                     </div>
                                 </div>
                                 <div className="header_right">
                                     <div className="menu_bar d-block d-md-none" onClick={() => setToggle(true)}><FontAwesomeIcon icon={faBars} /></div>
-                                    <ul className="btns">
+                                    <motion.ul className="btns">
                                         {
                                             btns.map((btn, index) => (
-                                                <li key={index}>
+                                                <motion.li
+                                                    key={index}
+                                                    variants={listItemVariants}
+                                                    initial='hidden'
+                                                    animate='visible'
+                                                    transition={{ delay: index * 0.1 }}
+                                                >
                                                     <Link href={btn.link}
                                                         className={`btn-primary ${btn.link === '/sign_up' ? 'active' : ''}`}
                                                         prefetch
                                                     >
                                                         {btn.name}
                                                     </Link>
-                                                </li>
+                                                </motion.li>
                                             ))
                                         }
-                                    </ul>
+                                    </motion.ul>
 
                                     {/* user after login starts */}
 
@@ -143,20 +175,23 @@ const Header = () => {
                         <FontAwesomeIcon icon={faX} />
                     </div>
                 </div>
-                <ul>
+                <motion.ul className='mobile_animate'>
                     {
                         Links.map((item, index) => {
-                            return <li key={index}>
+                            return <motion.li
+                                key={index}
+                                className='mobile_animate_list'
+                            >
                                 <Link href={item.link}
                                     className={`link ${pathname === item.link ? 'active' : ''}`}
                                     prefetch
                                 >
                                     {item.name}
                                 </Link>
-                            </li>
+                            </motion.li>
                         })
                     }
-                </ul>
+                </motion.ul>
             </div>
 
             {/* --------  Mobile Navbar End  ---------- */}

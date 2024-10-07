@@ -3,7 +3,10 @@
 
 .testi {
     margin-bottom: 90px;
-
+    @include scale_animation(scale);
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: 0vh 70vh;
     .parent_testi {
 
         .title {

@@ -2,8 +2,8 @@
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
-import React, { useEffect, useRef } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import React from 'react';
+import {  Col, Container, Row } from 'react-bootstrap';
 import about from '../images/about.png';
 import '../sass/pages/about.scss';
 import { useState } from 'react';
@@ -39,7 +39,7 @@ const About = () => {
                                 <div className="right">
                                     <div className="content_area">
                                         <h3>About Us</h3>
-                                        <p>{text.length > 400 && istruncate ? text.slice(0, 400) + '...' : text}</p>
+                                        <p>{text.length > 400 && istruncate ? text.slice(0, characterLimit) + '...' : text}</p>
                                         <div className="btn-primary" onClick={toggleTruncate}>{istruncate ? 'Read More' : 'Read Less'}</div>
                                     </div>
                                 </div>

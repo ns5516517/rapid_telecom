@@ -6,6 +6,17 @@
 
 .otp {
     padding: 90px 0;
+    position: relative;
+
+    .toast {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
 
     .parent_otp {
         padding: 70px 50px;

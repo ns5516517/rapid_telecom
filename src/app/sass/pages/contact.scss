@@ -314,11 +314,6 @@
     &.privacy {
         .parent_privacy {
             .privacy_head {
-                margin-bottom: 50px;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
 
                 h1,
                 h2,
@@ -368,151 +363,109 @@
                     color: $about_text_color;
                     font-weight: 500;
                 }
-            }
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                margin-bottom: 20px;
-                color: $primary_text_color;
-                font-family: var(--font-lexend);
-                font-weight: 600;
-            }
+                ul {
+                    margin-bottom: 10px;
 
-            h1 {
-                font-size: 28px;
-                line-height: 30px;
-            }
-
-            h2 {
-                font-size: 26px;
-                line-height: 30px;
-            }
-
-            h3 {
-                font-size: 24px;
-                line-height: 30px;
-            }
-
-            h4 {
-                font-size: 22px;
-                line-height: 30px;
-            }
-
-            h5 {
-                font-size: 20px;
-                line-height: 30px;
-            }
-
-            h6 {
-                font-size: 18px;
-                line-height: 30px;
-            }
-
-            ul {
-                margin-bottom: 10px;
-
-                li {
-                    font-size: 14px;
-                    line-height: 20px;
-                    margin-bottom: 8px;
-
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-
-                    a {
-                        display: inline-block;
+                    li {
                         font-size: 14px;
-                        font-weight: 500;
                         line-height: 20px;
-                        color: $label;
-                    }
-                }
-            }
+                        margin-bottom: 8px;
 
-            ol {
-                margin-bottom: 10px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
 
-                li {
-                    margin-bottom: 8px;
-                    line-height: 20px;
-                    font-size: 14px;
-
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-
-                    a {
-                        display: inline-block;
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 20px;
-                        color: $label;
-                    }
-                }
-            }
-
-            .table-responsive {
-                .table {
-                    background-color: $table_bg;
-                    border-radius: 10px;
-                    border-spacing: 10px;
-                    border-collapse: separate;
-                    width: 700px;
-                    box-shadow: 0px 4px 6px $shadow_color;
-
-                    thead {
-                        tr {
-                            th {
-                                background-color: transparent;
-                                border: none;
-                                font-size: 14px;
-                                line-height: 21px;
-                                font-weight: 700;
-                                color: $label;
-
-                            }
+                        a {
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 20px;
+                            color: $label;
                         }
                     }
+                }
 
-                    tbody {
-                        tr {
-                            td {
-                                background-color: transparent;
-                                border: none;
-                                border-radius: 6px;
-                                transition: all 0.3s ease;
-                                font-size: 14px;
-                                line-height: 21px;
-                                font-weight: 400;
-                                color: $label;
-                                min-width: 100px;
-                            }
+                ol {
+                    margin-bottom: 10px;
 
-                            &:nth-child(even) {
-                                td {
-                                    background-color: $primary_color;
-                                    color: $white;
+                    li {
+                        margin-bottom: 8px;
+                        line-height: 20px;
+                        font-size: 14px;
 
-                                    &:hover {
-                                        background-color: $white;
-                                        color: $primary_text_color;
-                                    }
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        a {
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 20px;
+                            color: $label;
+                        }
+                    }
+                }
+
+                .table-responsive {
+                    .table {
+                        background-color: $table_bg;
+                        border-radius: 10px;
+                        border-spacing: 10px;
+                        border-collapse: separate;
+                        width: 700px;
+                        box-shadow: 0px 4px 6px $shadow_color;
+
+                        thead {
+                            tr {
+                                th {
+                                    background-color: transparent;
+                                    border: none;
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    font-weight: 700;
+                                    color: $label;
+
                                 }
                             }
+                        }
 
-                            &:nth-child(odd) {
+                        tbody {
+                            tr {
                                 td {
-                                    background-color: $white;
-                                    color: $primary_text_color;
+                                    background-color: transparent;
+                                    border: none;
+                                    border-radius: 6px;
+                                    transition: all 0.3s ease;
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    font-weight: 400;
+                                    color: $label;
+                                    min-width: 100px;
+                                }
 
-                                    &:hover {
+                                &:nth-child(even) {
+                                    td {
                                         background-color: $primary_color;
                                         color: $white;
+
+                                        &:hover {
+                                            background-color: $white;
+                                            color: $primary_text_color;
+                                        }
+                                    }
+                                }
+
+                                &:nth-child(odd) {
+                                    td {
+                                        background-color: $white;
+                                        color: $primary_text_color;
+
+                                        &:hover {
+                                            background-color: $primary_color;
+                                            color: $white;
+                                        }
                                     }
                                 }
                             }
@@ -526,11 +479,6 @@
     &.terms {
         .parent_terms {
             .terms_head {
-                margin-bottom: 50px;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
 
                 h1,
                 h2,
@@ -579,152 +527,115 @@
                     line-height: 25px;
                     color: $about_text_color;
                     font-weight: 500;
-                }
-            }
+                    margin-bottom: 20px;
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                margin-bottom: 20px;
-                color: $primary_text_color;
-                font-family: var(--font-lexend);
-                font-weight: 600;
-            }
-
-            h1 {
-                font-size: 28px;
-                line-height: 30px;
-            }
-
-            h2 {
-                font-size: 26px;
-                line-height: 30px;
-            }
-
-            h3 {
-                font-size: 24px;
-                line-height: 30px;
-            }
-
-            h4 {
-                font-size: 22px;
-                line-height: 30px;
-            }
-
-            h5 {
-                font-size: 20px;
-                line-height: 30px;
-            }
-
-            h6 {
-                font-size: 18px;
-                line-height: 30px;
-            }
-
-            ul {
-                margin-bottom: 10px;
-
-                li {
-                    font-size: 14px;
-                    line-height: 20px;
-                    margin-bottom: 8px;
-
-                    &:last-child {
+                    &:last-of-type {
                         margin-bottom: 0;
                     }
-
-                    a {
-                        display: inline-block;
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 20px;
-                        color: $label;
-                    }
                 }
-            }
 
-            ol {
-                margin-bottom: 10px;
+                ul {
+                    margin-bottom: 10px;
 
-                li {
-                    margin-bottom: 8px;
-                    line-height: 20px;
-                    font-size: 14px;
-
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-
-                    a {
-                        display: inline-block;
+                    li {
                         font-size: 14px;
-                        font-weight: 500;
                         line-height: 20px;
-                        color: $label;
-                    }
-                }
-            }
+                        margin-bottom: 8px;
 
-            .table-responsive {
-                .table {
-                    background-color: $table_bg;
-                    border-radius: 10px;
-                    border-spacing: 10px;
-                    border-collapse: separate;
-                    width: 700px;
-                    box-shadow: 0px 4px 6px $shadow_color;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
 
-                    thead {
-                        tr {
-                            th {
-                                background-color: transparent;
-                                border: none;
-                                font-size: 14px;
-                                line-height: 21px;
-                                font-weight: 700;
-                                color: $label;
-
-                            }
+                        a {
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 20px;
+                            color: $label;
                         }
                     }
+                }
 
-                    tbody {
-                        tr {
-                            td {
-                                background-color: transparent;
-                                border: none;
-                                border-radius: 6px;
-                                transition: all 0.3s ease;
-                                font-size: 14px;
-                                line-height: 21px;
-                                font-weight: 400;
-                                color: $label;
-                                min-width: 100px;
-                            }
+                ol {
+                    margin-bottom: 10px;
 
-                            &:nth-child(even) {
-                                td {
-                                    background-color: $primary_color;
-                                    color: $white;
+                    li {
+                        margin-bottom: 8px;
+                        line-height: 20px;
+                        font-size: 14px;
 
-                                    &:hover {
-                                        background-color: $white;
-                                        color: $primary_text_color;
-                                    }
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        a {
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 20px;
+                            color: $label;
+                        }
+                    }
+                }
+
+                .table-responsive {
+                    .table {
+                        background-color: $table_bg;
+                        border-radius: 10px;
+                        border-spacing: 10px;
+                        border-collapse: separate;
+                        width: 700px;
+                        box-shadow: 0px 4px 6px $shadow_color;
+
+                        thead {
+                            tr {
+                                th {
+                                    background-color: transparent;
+                                    border: none;
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    font-weight: 700;
+                                    color: $label;
+
                                 }
                             }
+                        }
 
-                            &:nth-child(odd) {
+                        tbody {
+                            tr {
                                 td {
-                                    background-color: $white;
-                                    color: $primary_text_color;
+                                    background-color: transparent;
+                                    border: none;
+                                    border-radius: 6px;
+                                    transition: all 0.3s ease;
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    font-weight: 400;
+                                    color: $label;
+                                    min-width: 100px;
+                                }
 
-                                    &:hover {
+                                &:nth-child(even) {
+                                    td {
                                         background-color: $primary_color;
                                         color: $white;
+
+                                        &:hover {
+                                            background-color: $white;
+                                            color: $primary_text_color;
+                                        }
+                                    }
+                                }
+
+                                &:nth-child(odd) {
+                                    td {
+                                        background-color: $white;
+                                        color: $primary_text_color;
+
+                                        &:hover {
+                                            background-color: $primary_color;
+                                            color: $white;
+                                        }
                                     }
                                 }
                             }
@@ -967,7 +878,6 @@
                 margin: 0 auto;
 
                 .privacy_head {
-                    margin-bottom: 40px;
 
                     h3 {}
 
@@ -982,7 +892,6 @@
                 margin: 0 auto;
 
                 .terms_head {
-                    margin-bottom: 40px;
 
                     h3 {}
 
@@ -1133,36 +1042,36 @@
                 margin: 0 auto;
 
                 .terms_head {
-                    margin-bottom: 35px;
 
                     h3 {}
 
                     p {}
-                }
 
-                .table-responsive {
-                    .table {
-                        border-radius: 6px;
-                        border-spacing: 5px;
+                    .table-responsive {
+                        .table {
+                            border-radius: 6px;
+                            border-spacing: 5px;
 
-                        thead {
-                            tr {
-                                th {
-                                    padding: 4px 6px;
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 4px 6px;
+                                    }
                                 }
                             }
-                        }
 
-                        tbody {
-                            tr {
-                                td {
-                                    padding: 4px 6px;
-                                    min-width: 70px;
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 4px 6px;
+                                        min-width: 70px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+
             }
         }
 
@@ -1172,36 +1081,36 @@
                 margin: 0 auto;
 
                 .privacy_head {
-                    margin-bottom: 35px;
 
                     h3 {}
 
                     p {}
-                }
 
-                .table-responsive {
-                    .table {
-                        border-radius: 6px;
-                        border-spacing: 5px;
+                    .table-responsive {
+                        .table {
+                            border-radius: 6px;
+                            border-spacing: 5px;
 
-                        thead {
-                            tr {
-                                th {
-                                    padding: 4px 6px;
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 4px 6px;
+                                    }
                                 }
                             }
-                        }
 
-                        tbody {
-                            tr {
-                                td {
-                                    padding: 4px 6px;
-                                    min-width: 70px;
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 4px 6px;
+                                        min-width: 70px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+
             }
         }
     }
@@ -1361,7 +1270,6 @@
                 margin: 0 auto;
 
                 .terms_head {
-                    margin-bottom: 30px;
 
                     h1,
                     h2,
@@ -1381,6 +1289,7 @@
                     p {
                         font-size: 15px;
                         line-height: 24px;
+                        margin-bottom: 10px;
                     }
 
                     h1 {
@@ -1402,69 +1311,37 @@
                     h6 {
                         font-size: 17px;
                     }
-                }
 
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    margin-bottom: 10px;
-                }
-
-                h1 {
-                    font-size: 22px;
-                }
-
-                h2 {
-                    font-size: 21px;
-                }
-
-                h3 {
-                    font-size: 20px;
-                }
-
-                h4 {
-                    font-size: 19px;
-                }
-
-                h5 {
-                    font-size: 18px;
-                }
-
-                h6 {
-                    font-size: 17px;
-                }
-
-                ul {
-                    li {
-                        a {}
-                    }
-                }
-
-                ol {
-                    li {
-
-                        a {}
-                    }
-                }
-
-                .table-responsive {
-                    .table {
-                        thead {
-                            tr {
-                                th {}
-                            }
+                    ul {
+                        li {
+                            a {}
                         }
+                    }
 
-                        tbody {
-                            tr {
-                                td {}
+                    ol {
+                        li {
+
+                            a {}
+                        }
+                    }
+
+                    .table-responsive {
+                        .table {
+                            thead {
+                                tr {
+                                    th {}
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    td {}
+                                }
                             }
                         }
                     }
                 }
+
             }
         }
 
@@ -1474,7 +1351,6 @@
                 margin: 0 auto;
 
                 .privacy_head {
-                    margin-bottom: 30px;
 
                     h1,
                     h2,
@@ -1494,6 +1370,7 @@
                     p {
                         font-size: 15px;
                         line-height: 24px;
+                        margin-bottom: 10px;
                     }
 
                     h1 {
@@ -1515,69 +1392,37 @@
                     h6 {
                         font-size: 17px;
                     }
-                }
 
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    margin-bottom: 10px;
-                }
-
-                h1 {
-                    font-size: 22px;
-                }
-
-                h2 {
-                    font-size: 21px;
-                }
-
-                h3 {
-                    font-size: 20px;
-                }
-
-                h4 {
-                    font-size: 19px;
-                }
-
-                h5 {
-                    font-size: 18px;
-                }
-
-                h6 {
-                    font-size: 17px;
-                }
-
-                ul {
-                    li {
-                        a {}
-                    }
-                }
-
-                ol {
-                    li {
-
-                        a {}
-                    }
-                }
-
-                .table-responsive {
-                    .table {
-                        thead {
-                            tr {
-                                th {}
-                            }
+                    ul {
+                        li {
+                            a {}
                         }
+                    }
 
-                        tbody {
-                            tr {
-                                td {}
+                    ol {
+                        li {
+
+                            a {}
+                        }
+                    }
+
+                    .table-responsive {
+                        .table {
+                            thead {
+                                tr {
+                                    th {}
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    td {}
+                                }
                             }
                         }
                     }
                 }
+
             }
         }
     }
@@ -1750,7 +1595,6 @@
                 margin: 0 auto;
 
                 .terms_head {
-                    margin-bottom: 15px;
 
                     h1,
                     h2,
@@ -1796,79 +1640,41 @@
                     p {
                         font-size: 13px;
                         line-height: 22px;
+                        margin-bottom: 10px;
                     }
-                }
 
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    margin-bottom: 7px;
-                }
-
-                h1 {
-                    font-size: 18px;
-                    line-height: 22px;
-                }
-
-                h2 {
-                    font-size: 17px;
-                    line-height: 22px;
-                }
-
-                h3 {
-                    font-size: 16px;
-                    line-height: 22px;
-                }
-
-                h4 {
-                    font-size: 15px;
-                    line-height: 22px;
-                }
-
-                h5 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                h6 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                ul {
-                    li {
-                        a {}
+                    ul {
+                        li {
+                            a {}
+                        }
                     }
-                }
 
-                ol {
-                    li {
+                    ol {
+                        li {
 
-                        a {}
+                            a {}
+                        }
                     }
-                }
 
-                .table-responsive {
-                    .table {
-                        border-radius: 6px;
-                        border-spacing: 5px;
+                    .table-responsive {
+                        .table {
+                            border-radius: 6px;
+                            border-spacing: 5px;
 
-                        thead {
-                            tr {
-                                th {
-                                    padding: 4px 6px;
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 4px 6px;
+                                    }
                                 }
                             }
-                        }
 
-                        tbody {
-                            tr {
-                                td {
-                                    padding: 4px 6px;
-                                    min-width: 70px;
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 4px 6px;
+                                        min-width: 70px;
+                                    }
                                 }
                             }
                         }
@@ -1883,7 +1689,6 @@
                 margin: 0 auto;
 
                 .privacy_head {
-                    margin-bottom: 15px;
 
                     h1,
                     h2,
@@ -1929,79 +1734,41 @@
                     p {
                         font-size: 13px;
                         line-height: 22px;
+                        margin-bottom: 10px;
                     }
-                }
 
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    margin-bottom: 7px;
-                }
-
-                h1 {
-                    font-size: 18px;
-                    line-height: 22px;
-                }
-
-                h2 {
-                    font-size: 17px;
-                    line-height: 22px;
-                }
-
-                h3 {
-                    font-size: 16px;
-                    line-height: 22px;
-                }
-
-                h4 {
-                    font-size: 15px;
-                    line-height: 22px;
-                }
-
-                h5 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                h6 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                ul {
-                    li {
-                        a {}
+                    ul {
+                        li {
+                            a {}
+                        }
                     }
-                }
 
-                ol {
-                    li {
+                    ol {
+                        li {
 
-                        a {}
+                            a {}
+                        }
                     }
-                }
 
-                .table-responsive {
-                    .table {
-                        border-radius: 6px;
-                        border-spacing: 5px;
+                    .table-responsive {
+                        .table {
+                            border-radius: 6px;
+                            border-spacing: 5px;
 
-                        thead {
-                            tr {
-                                th {
-                                    padding: 4px 6px;
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 4px 6px;
+                                    }
                                 }
                             }
-                        }
 
-                        tbody {
-                            tr {
-                                td {
-                                    padding: 4px 6px;
-                                    min-width: 70px;
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 4px 6px;
+                                        min-width: 70px;
+                                    }
                                 }
                             }
                         }
@@ -2174,7 +1941,6 @@
             .parent_terms {
 
                 .terms_head {
-                    margin-bottom: 12px;
 
                     h1,
                     h2,
@@ -2220,87 +1986,49 @@
                     p {
                         font-size: 12px;
                         line-height: 19px;
+                        margin-bottom: 7px;
                     }
-                }
 
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    margin-bottom: 7px;
-                }
-
-                h1 {
-                    font-size: 18px;
-                    line-height: 22px;
-                }
-
-                h2 {
-                    font-size: 17px;
-                    line-height: 22px;
-                }
-
-                h3 {
-                    font-size: 16px;
-                    line-height: 22px;
-                }
-
-                h4 {
-                    font-size: 15px;
-                    line-height: 22px;
-                }
-
-                h5 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                h6 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                ul {
-                    li {
-                        font-size: 13px;
-
-                        a {
+                    ul {
+                        li {
                             font-size: 13px;
-                        }
-                    }
-                }
 
-                ol {
-                    li {
-
-                        font-size: 13px;
-
-                        a {
-                            font-size: 13px;
-                        }
-                    }
-                }
-
-                .table-responsive {
-                    .table {
-                        border-radius: 6px;
-                        border-spacing: 5px;
-
-                        thead {
-                            tr {
-                                th {
-                                    padding: 4px 6px;
-                                }
+                            a {
+                                font-size: 13px;
                             }
                         }
+                    }
 
-                        tbody {
-                            tr {
-                                td {
-                                    padding: 4px 6px;
-                                    min-width: 70px;
+                    ol {
+                        li {
+
+                            font-size: 13px;
+
+                            a {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+
+                    .table-responsive {
+                        .table {
+                            border-radius: 6px;
+                            border-spacing: 5px;
+
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 4px 6px;
+                                    }
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 4px 6px;
+                                        min-width: 70px;
+                                    }
                                 }
                             }
                         }
@@ -2313,7 +2041,6 @@
             .parent_privacy {
 
                 .privacy_head {
-                    margin-bottom: 12px;
 
                     h1,
                     h2,
@@ -2359,87 +2086,49 @@
                     p {
                         font-size: 12px;
                         line-height: 19px;
+                        margin-bottom: 7px;
                     }
-                }
 
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    margin-bottom: 7px;
-                }
-
-                h1 {
-                    font-size: 18px;
-                    line-height: 22px;
-                }
-
-                h2 {
-                    font-size: 17px;
-                    line-height: 22px;
-                }
-
-                h3 {
-                    font-size: 16px;
-                    line-height: 22px;
-                }
-
-                h4 {
-                    font-size: 15px;
-                    line-height: 22px;
-                }
-
-                h5 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                h6 {
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-
-                ul {
-                    li {
-                        font-size: 13px;
-
-                        a {
+                    ul {
+                        li {
                             font-size: 13px;
-                        }
-                    }
-                }
 
-                ol {
-                    li {
-
-                        font-size: 13px;
-
-                        a {
-                            font-size: 13px;
-                        }
-                    }
-                }
-
-                .table-responsive {
-                    .table {
-                        border-radius: 6px;
-                        border-spacing: 5px;
-
-                        thead {
-                            tr {
-                                th {
-                                    padding: 4px 6px;
-                                }
+                            a {
+                                font-size: 13px;
                             }
                         }
+                    }
 
-                        tbody {
-                            tr {
-                                td {
-                                    padding: 4px 6px;
-                                    min-width: 70px;
+                    ol {
+                        li {
+
+                            font-size: 13px;
+
+                            a {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+
+                    .table-responsive {
+                        .table {
+                            border-radius: 6px;
+                            border-spacing: 5px;
+
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 4px 6px;
+                                    }
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 4px 6px;
+                                        min-width: 70px;
+                                    }
                                 }
                             }
                         }

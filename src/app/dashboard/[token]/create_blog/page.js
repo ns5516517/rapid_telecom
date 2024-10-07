@@ -2,7 +2,7 @@
 import Breadcrumb from '@/app/components/breadcrumb';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import '../../sass/dashboard/create_blog.scss';
+import '../../../sass/dashboard/create_blog.scss';
 
 const Page = () => {
     return (
