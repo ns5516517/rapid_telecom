@@ -116,6 +116,7 @@ const Page = () => {
                         </Row>
                     </Container>
                     {
+                        typeof window !== undefined &&
                         < Toast show={loginMessage.status !== undefined} delay={1500} autohide >
                             <Toast.Body>{loginMessage.message}</Toast.Body>
                         </Toast >

@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row, Toast } from 'react-bootstrap';
 import '../../sass/pages/login.scss';
@@ -84,6 +83,7 @@ const Page = () => {
                         </Row>
                     </Container>
                     {
+                        typeof window !== undefined &&
                         < Toast show={ response.status !== undefined} delay={1500} autohide >
                             <Toast.Body>{response.message}</Toast.Body>
                         </Toast >
